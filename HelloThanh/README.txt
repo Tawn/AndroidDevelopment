@@ -4,5 +4,5 @@ Bobby
 
 ASSIGNMENT DESCRIPTION
 
-Assignment01 provided guidance on how create a new project and visualization of a simple program, that includes "Hello Thanh". This ensured that I was able to install the Android Studio. On top of that, to make sure I have the proper setup of the SDK and the virtual device emulator. 
+Assignment01 guides us on how create a new project and visualization; starting with a simple program that displays “Hello Thanh”. This ensures that I was able to install the Android Studio properly. Also, to make sure have the right set for the SDK and the virtual device emulator. 
 
