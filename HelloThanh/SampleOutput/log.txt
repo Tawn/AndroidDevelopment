@@ -1,0 +1,10 @@
+05-25 17:24:52.799 2582-2582/? I/art: Not late-enabling -Xcheck:jni (already on)
+05-25 17:24:52.800 2582-2582/? W/art: Unexpected CPU variant for X86 using defaults: x86
+05-25 17:24:52.917 2582-2582/? W/System: ClassLoader referenced unknown path: /data/app/assignment01.csc214.hellothanh-2/lib/x86
+05-25 17:24:52.937 2582-2582/? I/InstantRun: starting instant run server: is main process
+05-25 17:24:53.051 2582-2582/? W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+05-25 17:24:53.447 2582-2639/? I/OpenGLRenderer: Initialized EGL, version 1.4
+05-25 17:24:53.447 2582-2639/? D/OpenGLRenderer: Swap behavior 1
+05-25 17:24:53.449 2582-2639/? W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+05-25 17:24:53.449 2582-2639/? D/OpenGLRenderer: Swap behavior 0
+05-25 17:24:53.529 2582-2582/? W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
