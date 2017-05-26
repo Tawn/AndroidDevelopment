@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ThanhsLayout</string>
+    <string name="_100">100</string>
+    <string name="This_is_a_Toast">Toast!</string>
+    <string name="clickme">ClickMe</string>
+    <string name="click_me">Click Me</string>
+    <string name="push_me">Push Me</string>
+    <string name="press_me">Press ME</string>
+    <string name="First_Toast">First Toast!</string>
+    <string name="dec">dec</string>
+    <string name="Second_Toast">Second Toast!</string>
+    <string name="Reset">Reset!</string>
+</resources>
