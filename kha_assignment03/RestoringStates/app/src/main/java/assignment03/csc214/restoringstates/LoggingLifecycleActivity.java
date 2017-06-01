@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class LoggingLifecycleActivity extends AppCompatActivity {
 
+    // Variables
     private String TAG;
     private TextView mEditText;
     private ImageView mEditImage;
@@ -25,6 +26,7 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logging_lifecycle);
 
+        // Initializing Variables
         TAG = "Thanh";
         Log.d(TAG, "Creating");
         isBasset = true;
@@ -35,12 +37,16 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
         rotateDisplay = "Screen Rotated: ";
     }
 
+
+    // Button listener
     public void imageChangerButton(View view) {
-        if(isBasset) {
+
+        if(isBasset) { // If current image is a Basset Hound
             mEditImage.setImageResource(R.drawable.lab);
             mImageButton.setImageResource(R.drawable.basset);
             isBasset = false;
-        } else {
+
+        } else { // If it's a Lab
             mEditImage.setImageResource(R.drawable.basset);
             mImageButton.setImageResource(R.drawable.lab);
             isBasset = true;
@@ -52,8 +58,10 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         rotateCount++;
-        savedInstanceState.putInt("rotateCount", rotateCount);
-        savedInstanceState.putBoolean("isBasset", isBasset);
+
+        // Saving important on close
+        savedInstanceState.putInt("rotateCount", rotateCount); // rotate count
+        savedInstanceState.putBoolean("isBasset", isBasset);   // image and button state
 
 
     }
@@ -77,6 +85,7 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
         }
     }
 
+    // Log Indicator
     @Override
     protected void onStart() {
         super.onStart();
