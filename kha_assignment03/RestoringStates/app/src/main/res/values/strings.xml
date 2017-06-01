@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RestoringStates</string>
+    <string name="button">Button</string>
+    <string name="puppy_switched">Puppy Switched: 0</string>
+    <string name="screen_rotated">Screen Rotated: 0</string>
+</resources>

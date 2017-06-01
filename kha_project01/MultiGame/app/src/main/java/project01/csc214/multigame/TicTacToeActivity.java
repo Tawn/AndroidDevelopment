@@ -1,5 +1,6 @@
 package project01.csc214.multigame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,15 +24,21 @@ public class TicTacToeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tic_tac_toe);
 
+        mBack = (Button) findViewById(R.id.Back);
+        mBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TicTacToeActivity.this, MainActivity.class);
+                startActivity(intent);            }
+        });
 
-        mCenter = (Button) findViewById(R.id.Center);
-        mCenter.setOnClickListener(new View.OnClickListener() {
+        mTopLeft = (Button) findViewById(R.id.TopLeft);
+        mTopLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((TextView)findViewById(R.id.Center)).setText("X");
             }
         });
-
 
     }
     

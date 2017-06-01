@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DuoGames</string>
+    <string name="duogames">DuoGames</string>
+    <string name="hangman">HangMan</string>
+    <string name="connect_four">Connect Four</string>
+</resources>
