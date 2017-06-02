@@ -8,7 +8,7 @@ public class HangmanGame {
     private String[] alreadyGuessed = new String[26];
     private String[] words = new String[10];
     private String wordToGuess;
-    private int numberOfGuesses, count;
+    private int count;
 
     public HangmanGame() {
         words[0] = "BUTTER";
@@ -22,14 +22,29 @@ public class HangmanGame {
         words[8] = "GRAPES";
         words[9] = "APPLES";
 
-        numberOfGuesses = 0;
         count = 0;
         generateWord();
     }
 
+    public void reset() {
+        alreadyGuessed = new String[26];
+        count = 0;
+    }
     public void generateWord() {
         Random rand = new Random();
         wordToGuess = words[rand.nextInt(10)];
+    }
+
+    public String[] getGuessedLetters() {
+        return alreadyGuessed;
+    }
+
+    public int getLetterCount() {
+        return count;
+    }
+
+    public int wordLength() {
+        return wordToGuess.length();
     }
 
     public int check(String guess) {
@@ -80,6 +95,34 @@ public class HangmanGame {
 
         }
 
+    }
+
+    public String getStatusDisplay() {
+        String setup = "Word: ";
+
+        for(int i = 0; i < wordToGuess.length(); i++) {
+            String letter = Character.toString(wordToGuess.charAt(i));
+            if(contains(letter)) {
+                    setup += letter + " ";
+
+            } else {
+                if(i == wordToGuess.length()-1)
+                    setup += "_";
+                else
+                    setup += "_ ";
+            }
+        }
+        return setup;
+
+    }
+
+    public boolean contains(String guess) {
+        for(int i = 0; i < count; i++) {
+            if(alreadyGuessed[i].equals(guess)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

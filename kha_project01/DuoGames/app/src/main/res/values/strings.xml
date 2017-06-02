@@ -10,4 +10,6 @@
     <string name="player_turn">Player 1:</string>
     <string name="make_a_guess">make a guess</string>
     <string name="word">Word: </string>
+    <string name="used">Used:</string>
+    <string name="guess">Guess</string>
 </resources>

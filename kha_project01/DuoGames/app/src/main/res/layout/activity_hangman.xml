@@ -41,14 +41,17 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="Used [ ]"
+            android:id="@+id/letter_used"
+            android:text="@string/used"
             android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical" />
 
         <TextView
+            android:id="@+id/word_status"
             android:text="@string/word"
             android:paddingStart="5dp"
             android:textSize="20sp"
@@ -104,7 +107,7 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:text="Submit"
+            android:text="@string/guess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="playerWordGuess"/>

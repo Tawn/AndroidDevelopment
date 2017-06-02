@@ -13,46 +13,82 @@ import static project01.csc214.duogames.R.drawable.stage1;
 
 public class HangmanActivity extends AppCompatActivity {
 
+    // Game
     private HangmanGame game;
-    private EditText etGuess;
-    private int resultOfGuess, playerTurn, attemptsLeft;
-    private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE, WRONG_LETTER_MESSAGE,
-                    CORRECT_LETTER_MESSAGE, LOSE_MESSAGE;
+
+    // Members
     private ImageView ivStatus;
-    private TextView tvPlayerTurn;
-    private String PLAYERONE, PLAYERTWO;
+    private TextView tvPlayerTurn, tvLetterUsed, tvWordStatus;
+    private EditText etGuess;
+
+    // Integers
+    private int playerTurn, attemptsLeft, guessCount;
+
+    // String w/Messages
+    private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE, WRONG_LETTER_MESSAGE,
+                    CORRECT_LETTER_MESSAGE, LOSE_MESSAGE, EXIT_MESSAGE,
+            displayGuessed, wordStatus,
+            PLAYER_ONE, PLAYER_TWO;
+
+    // Boolean
+    private boolean exitConfirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hangman);
 
+        // Game
         game = new HangmanGame();
+
+        // Integers
         playerTurn = 1;
+        attemptsLeft = 8;
+        guessCount = 0;
+
+        // Members
         etGuess = (EditText)findViewById(R.id.guess);
+        ivStatus = (ImageView)findViewById(R.id.game_status);
+        tvLetterUsed = (TextView)findViewById(R.id.letter_used);
+        tvWordStatus = (TextView)findViewById(R.id.word_status);
+        tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
+
+        // Strings
         ALREADY_GUESSED_MESSAGE = "Already guessed that letter";
         WRONG_WORD_MESSAGE = "Wrong Guess";
         WRONG_LETTER_MESSAGE = "Wrong letter";
         WINNER_MESSAGE = "Player " + playerTurn + " wins!";
         CORRECT_LETTER_MESSAGE = "You got it!";
         LOSE_MESSAGE = "You Lose. Next Players Turn";
-        PLAYERONE = "Player 1:";
-        PLAYERTWO = "Player 2:";
-        attemptsLeft = 8;
-        ivStatus = (ImageView)findViewById(R.id.game_status);
-        tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
+        PLAYER_ONE = "Player 1:";
+        PLAYER_TWO = "Player 2:";
+        displayGuessed = "Used: ";
+        EXIT_MESSAGE = "Press MAIN MENU again to confirm";
 
+        // Word Setup
+        wordStatus = game.getStatusDisplay();
+        tvWordStatus.setText(wordStatus);
     }
 
     public void MainMenuPress(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        // If Main Menu is pressed Twice in a Row
+        if(exitConfirm) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
+        } else { // If other buttons are pressed instead
+            Toast.makeText(this, EXIT_MESSAGE, Toast.LENGTH_SHORT).show();
+            exitConfirm = true;
+
+        }
     }
 
     public void playerWordGuess(View view) {
         String guess = etGuess.getText().toString();
-
+        exitConfirm = false;
         int resultOfGuess = game.check(guess);
+
+        // Check guess result
         switch (resultOfGuess) {
             case 0: Toast.makeText(this, ALREADY_GUESSED_MESSAGE, Toast.LENGTH_SHORT).show();
                 break;
@@ -70,7 +106,27 @@ public class HangmanActivity extends AppCompatActivity {
                 break;
         }
 
+        // Word Status Update
+        wordStatus = game.getStatusDisplay();
+        tvWordStatus.setText(wordStatus);
+
         updateImage(attemptsLeft);
+        guessCount = game.getLetterCount();
+        String[] alreadyGuessed = game.getGuessedLetters();
+
+        // Update Used Words
+        if(guess.length() == 1) {
+            for (int i = 0; i < guessCount; i++) {
+                if (i == 0)
+                    displayGuessed = "Used: [" + alreadyGuessed[i];
+                else if (i == alreadyGuessed.length - 1)
+                    displayGuessed += ", " + alreadyGuessed[i];
+                else
+                    displayGuessed += ", " + alreadyGuessed[i];
+            }
+            displayGuessed += "]";
+            tvLetterUsed.setText(displayGuessed);
+        }
 
     }
 
@@ -94,14 +150,28 @@ public class HangmanActivity extends AppCompatActivity {
                 Toast.makeText(this, LOSE_MESSAGE, Toast.LENGTH_SHORT).show();
                 if(playerTurn == 1) {
                     playerTurn = 2;
-                    tvPlayerTurn.setText(PLAYERTWO);
+                    tvPlayerTurn.setText(PLAYER_TWO);
 
                 } else {
                     playerTurn = 1;
-                    tvPlayerTurn.setText(PLAYERONE);
+                    tvPlayerTurn.setText(PLAYER_ONE);
                 }
+
+                // Reset Game
+                gameReset();
+
             default:
                 break;
         }
+    }
+
+    // Game Reset
+    public void gameReset() {
+        game.reset();
+        ivStatus.setImageResource(R.drawable.stage0);
+        attemptsLeft = 8;
+        // Word Status Update
+        wordStatus = game.getStatusDisplay();
+        tvWordStatus.setText(wordStatus);
     }
 }
