@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="project01.csc214.duogames.HangmanActivity">
+    tools:context="project01.csc214.duogames.HangmanActivity"
+    android:orientation="vertical">
+
+    <!--SCORE BOARD-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFF"
+        android:gravity="center">
+
+        <TextView
+            android:text="Player 1: 0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="70dp"/>
+
+        <TextView
+            android:text="Player 2: 0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+
+    </LinearLayout>
+
+    <!--GAME BOARD-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:background="#0BF">
+
+        <!--COLUMN 1-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#0FF">
+
+            <ImageView
+                android:src="@mipmap/red_piece"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:src="@mipmap/red_piece"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <!--COLUMN 2-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#00F">
+
+            <ImageView
+                android:id="@+id/one_one"
+                android:src="@mipmap/red_piece"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/one_two"
+                android:src="@mipmap/red_piece"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <!--COLUMN 3-->
+        <!--COLUMN 4-->
+        <!--COLUMN 5-->
+        <!--COLUMN 6-->
+        <!--COLUMN 7-->
+    </LinearLayout>
+
+    <!--MENU-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/MainMenu"
+            android:text="@string/main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="MainMenuPress" />
+    </LinearLayout>
 
 
 
-</RelativeLayout>
+</LinearLayout>
