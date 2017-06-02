@@ -5,4 +5,9 @@
     <string name="connect_four">Connect Four</string>
     <string name="main_menu">Main Menu</string>
     <string name="player_1_turn">Player 1 Turn</string>
+    <string name="by_thanh_kha">by Thanh Kha</string>
+    <string name="drop">drop</string>
+    <string name="player_turn">Player 1:</string>
+    <string name="make_a_guess">make a guess</string>
+    <string name="word">Word: </string>
 </resources>

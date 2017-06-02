@@ -12,20 +12,23 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#FFF"
+        android:background="#000"
         android:gravity="center">
 
         <TextView
             android:text="Player 1: 0"
+            android:textColor="#FFF"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="70dp"/>
 
         <TextView
             android:text="Player 2: 0"
+            android:textColor="#FFF"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -35,46 +38,54 @@
         android:layout_height="0dp"
         android:layout_weight=".5"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:background="#83a5b1">
 
         <Button
-            android:text="1"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="columnOnePress"/>
         <Button
-            android:text="2"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="columnTwoPress"/>
         <Button
-            android:text="3"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="columnThreePress"/>
         <Button
-            android:text="4"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="columnFourPress"/>
         <Button
-            android:text="5"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="columnFivePress"/>
         <Button
-            android:text="6"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="columnSixPress"/>
         <Button
-            android:text="7"
+            android:text="@string/drop"
+            android:textSize="11sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -428,7 +439,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="MainMenuPress"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentEnd="true"/>
     </RelativeLayout>
 
 
