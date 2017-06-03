@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TextEdit</string>
+    <string name="change_font">Change Font</string>
+    <string name="change_message">Change Message</string>
+    <string name="this_is_your_message">This is your message.</string>
+    <string name="font_settings">Font Settings</string>
+    <string name="bold">Bold</string>
+    <string name="italic">Italic</string>
+    <string name="underline">Underline</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+</resources>

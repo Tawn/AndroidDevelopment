@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="assignment04.csc214.textedit.MainActivity">
+
+    <TextView
+        android:id="@+id/text_edit"
+        android:text="@string/this_is_your_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:textSize="35sp"
+        android:layout_above="@+id/button_location"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/button_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:text="@string/change_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="changeFontButtonPress"/>
+
+        <Button
+            android:text="@string/change_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="changeMessageButtonPress"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

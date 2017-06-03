@@ -63,7 +63,6 @@ public class LoggingLifecycleActivity extends AppCompatActivity {
         savedInstanceState.putInt("rotateCount", rotateCount); // rotate count
         savedInstanceState.putBoolean("isBasset", isBasset);   // image and button state
 
-
     }
 
     @Override
