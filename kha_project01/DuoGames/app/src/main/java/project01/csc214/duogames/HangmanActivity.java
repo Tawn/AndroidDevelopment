@@ -23,7 +23,7 @@ public class HangmanActivity extends AppCompatActivity {
 
     // Integers
     private int playerTurn, attemptsLeft, guessCount;
-    private int playerStartTurn;
+    private int playerStartTurnHangman, playerStartTurnConnectFour;
 
     // String w/Messages
     private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE, WRONG_LETTER_MESSAGE,
@@ -65,8 +65,6 @@ public class HangmanActivity extends AppCompatActivity {
         WINNER_MESSAGE = "Player " + playerTurn + " wins!";
         CORRECT_LETTER_MESSAGE = "You got it!";
         LOSE_MESSAGE = "You Lose. Next Players Turn";
-        PLAYER_ONE = "Player 1:";
-        PLAYER_TWO = "Player 2:";
         displayGuessed = "Used: ";
         EXIT_MESSAGE = "Press MAIN MENU again to confirm";
 
@@ -95,17 +93,22 @@ public class HangmanActivity extends AppCompatActivity {
         tvPlayer1Name.setText(player1_name);
         tvPlayer2Name.setText(player2_name);
 
+        playerStartTurnConnectFour = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
+
+        PLAYER_ONE = player1_name + "'s Turn";
+        PLAYER_TWO = player2_name + "'s Turn";
+
         // Getting Player start
-        playerStartTurn = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
-        if (playerStartTurn == 1) {
+        playerStartTurnHangman = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
+        if (playerStartTurnHangman == 1) {
             playerTurn = 1;
             tvPlayerTurn.setText(PLAYER_ONE);
-            WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+            WINNER_MESSAGE = player1_name + " wins!";
 
         } else {
             playerTurn = 2;
             tvPlayerTurn.setText(PLAYER_TWO);
-            WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+            WINNER_MESSAGE = player2_name + " wins!";
 
         }
     }
@@ -190,12 +193,12 @@ public class HangmanActivity extends AppCompatActivity {
                 Toast.makeText(this, LOSE_MESSAGE, Toast.LENGTH_SHORT).show();
                 if(playerTurn == 1) {
                     playerTurn = 2;
-                    WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+                    WINNER_MESSAGE = player1_name + " wins!";
                     tvPlayerTurn.setText(PLAYER_TWO);
 
                 } else {
                     playerTurn = 1;
-                    WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+                    WINNER_MESSAGE = player2_name + " wins!";
                     tvPlayerTurn.setText(PLAYER_ONE);
                 }
 
@@ -223,9 +226,11 @@ public class HangmanActivity extends AppCompatActivity {
 
         Toast.makeText(this, WINNER_MESSAGE, Toast.LENGTH_SHORT).show();
         if(playerTurn == 1) {
+            Toast.makeText(this, player1_name + " Score +1", Toast.LENGTH_SHORT).show();
             player1_score++;
 
         } else {
+            Toast.makeText(this, player2_name + " Score +1", Toast.LENGTH_SHORT).show();
             player2_score++;
 
         }
@@ -233,15 +238,16 @@ public class HangmanActivity extends AppCompatActivity {
         intent.putExtra(MainActivity.P2SCORE, player2_score);
         intent.putExtra(MainActivity.P1NAME, player1_name);
         intent.putExtra(MainActivity.P2NAME, player2_name);
+        intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurnConnectFour);
 
         // Switch start turns
-        if(playerStartTurn == 1) {
-            playerStartTurn = 2;
+        if(playerStartTurnHangman == 1) {
+            playerStartTurnHangman = 2;
         } else {
-            playerStartTurn = 1;
+            playerStartTurnHangman = 1;
         }
 
-        intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurn);
+        intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurnHangman);
         setResult(RESULT_OK, intent);
         finish();
     }

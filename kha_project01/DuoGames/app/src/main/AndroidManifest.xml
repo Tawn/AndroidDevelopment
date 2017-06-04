@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConnectFourActivity" />
-        <activity android:name=".HangmanActivity"></activity>
+        <activity android:name=".HangmanActivity" />
+        <activity android:name=".NameChangeActivity"></activity>
     </application>
 
 </manifest>

@@ -15,4 +15,9 @@
     <string name="player_1">Player 1</string>
     <string name="player_2">Player 2</string>
     <string name="_0">0</string>
+    <string name="players_name_settings">Players Name Settings</string>
+    <string name="enter_player_1_username">Enter player 1 username</string>
+    <string name="enter_player_2_username">Enter player 2 username</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 </resources>

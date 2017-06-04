@@ -20,7 +20,7 @@ public class ConnectFourActivity extends AppCompatActivity {
     private ImageView mPosition;
     private int columnOneRow, columnTwoRow,columnThreeRow,columnFourRow,
             columnFiveRow, columnSixRow, columnSevenRow;
-    private int playerTurn, playerStartTurn;
+    private int playerTurn, playerStartTurnConnectFour, playerStartTurnHangman;
     private String ERROR_MESSAGE, EXIT_MESSAGE, PLAYER_ONE_TURN, PLAYER_TWO_TURN;
     private RelativeLayout mC4;
     private TextView tvPlayerTurn, tvPlayer1Name, tvPlayer2Name, tvPlayer1Score, tvPlayer2Score;
@@ -41,8 +41,6 @@ public class ConnectFourActivity extends AppCompatActivity {
         columnFiveRow = 6; columnSixRow = 6; columnSevenRow = 6;
         ERROR_MESSAGE = "Invalid Move"; // can't pass row 1
         EXIT_MESSAGE = "Press MAIN MENU again to confirm";
-        PLAYER_ONE_TURN = "Player 1 Turn";
-        PLAYER_TWO_TURN = "Player 2 Turn";
 
         // Retrieve current results
         Intent intent = getIntent();
@@ -64,14 +62,19 @@ public class ConnectFourActivity extends AppCompatActivity {
         tvPlayer2Score.setText(p2ScoreString);
         tvPlayer1Name.setText(player1_name);
         tvPlayer2Name.setText(player2_name);
+        PLAYER_ONE_TURN = player1_name + "'s Turn";
+        PLAYER_TWO_TURN = player2_name + "'s Turn";
+
+        playerStartTurnHangman = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
 
         mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
         // Determine players turn
-        playerStartTurn = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
+        playerStartTurnConnectFour = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
         tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
-        if(playerStartTurn == 1) {
+        if(playerStartTurnConnectFour == 1) {
             playerTurn = 1;
+            tvPlayerTurn.setText(PLAYER_ONE_TURN);
             playerOneTurn = true;
         } else {
             playerTurn = 2;
@@ -507,13 +510,13 @@ public class ConnectFourActivity extends AppCompatActivity {
         int gameResult = mGame.checkResult();
 
         if(gameResult == 1) {
-            Toast.makeText(this, "Player 1 Wins!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Player 1 Score +1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, player1_name + " Wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, player1_name + " Score +1", Toast.LENGTH_SHORT).show();
             player1_score++;
         } else
         if(gameResult == 2) {
-            Toast.makeText(this, "Player 2 Wins!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "Player 2 Score +1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, player2_name + " Wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, player2_name + " Score +1", Toast.LENGTH_SHORT).show();
             player2_score++;
         }
 
@@ -523,20 +526,18 @@ public class ConnectFourActivity extends AppCompatActivity {
             intent.putExtra(MainActivity.P2SCORE, player2_score);
             intent.putExtra(MainActivity.P1NAME, player1_name);
             intent.putExtra(MainActivity.P2NAME, player2_name);
-
+            intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurnHangman);
             // other player starts a the game
-            if(playerStartTurn == 1) {
-                playerStartTurn = 2;
+            if(playerStartTurnConnectFour == 1) {
+                playerStartTurnConnectFour = 2;
             } else {
-                playerStartTurn = 1;
+                playerStartTurnConnectFour = 1;
             }
-            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurn);
+            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurnConnectFour);
             setResult(RESULT_OK, intent);
             finish();
         }
 
 
     }
-
-
 }

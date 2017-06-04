@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
             hangmanTurn = data.getIntExtra(HANGMAN_TURN, 1);
             tvPlayer1Score.setText(p1Score);
             tvPlayer2Score.setText(p2Score);
+
+            player1_name = data.getStringExtra(P1NAME);
+            player2_name = data.getStringExtra(P2NAME);
+            tvPlayer1Name.setText(player1_name);
+            tvPlayer2Name.setText(player2_name);
         }
     }
 
@@ -112,6 +117,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void HangManPress(View view) {
         Intent intent = new Intent(this, HangmanActivity.class);
+        intent.putExtra(P1SCORE, player1_score);
+        intent.putExtra(P2SCORE, player2_score);
+        intent.putExtra(P1NAME, player1_name);
+        intent.putExtra(P2NAME, player2_name);
+        intent.putExtra(HANGMAN_TURN, hangmanTurn);
+        intent.putExtra(CONNECT_FOUR_TURN, connectFourTurn);
+
+        startActivityForResult(intent, 2);
+    }
+
+    public void playerSettingPress(View view) {
+        Intent intent = new Intent(this, NameChangeActivity.class);
         intent.putExtra(P1SCORE, player1_score);
         intent.putExtra(P2SCORE, player2_score);
         intent.putExtra(P1NAME, player1_name);
