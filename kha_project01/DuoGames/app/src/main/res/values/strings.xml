@@ -12,4 +12,7 @@
     <string name="word">Word: </string>
     <string name="used">Used:</string>
     <string name="guess">Guess</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="_0">0</string>
 </resources>

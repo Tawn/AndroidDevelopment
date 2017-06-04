@@ -33,6 +33,11 @@ public class HangmanActivity extends AppCompatActivity {
     // Boolean
     private boolean exitConfirm;
 
+    // Stored Scores
+    private TextView tvPlayer1Name, tvPlayer2Name, tvPlayer1Score, tvPlayer2Score;
+    private String player1_name, player2_name;
+    private int player1_score, player2_score;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,13 +73,34 @@ public class HangmanActivity extends AppCompatActivity {
         // Word Setup
         wordStatus = game.getStatusDisplay();
         tvWordStatus.setText(wordStatus);
+
+        // Retrieve current results
+        Intent intent = getIntent();
+
+        tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
+        tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
+        tvPlayer1Name = (TextView)findViewById(R.id.player1);
+        tvPlayer2Name = (TextView)findViewById(R.id.player2);
+
+        player1_score = intent.getIntExtra(MainActivity.P1SCORE, 0);
+        player2_score = intent.getIntExtra(MainActivity.P2SCORE, 0);
+        player1_name = intent.getStringExtra(MainActivity.P1NAME);
+        player2_name = intent.getStringExtra(MainActivity.P2NAME);
+
+        String p1ScoreString = Integer.toString(player1_score);
+        String p2ScoreString = Integer.toString(player2_score);
+
+        tvPlayer1Score.setText(p1ScoreString);
+        tvPlayer2Score.setText(p2ScoreString);
+        tvPlayer1Name.setText(player1_name);
+        tvPlayer2Name.setText(player2_name);
     }
 
     public void MainMenuPress(View view) {
         // If Main Menu is pressed Twice in a Row
         if(exitConfirm) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            setResult(RESULT_CANCELED);
+            finish();
 
         } else { // If other buttons are pressed instead
             Toast.makeText(this, EXIT_MESSAGE, Toast.LENGTH_SHORT).show();
@@ -92,7 +118,7 @@ public class HangmanActivity extends AppCompatActivity {
         switch (resultOfGuess) {
             case 0: Toast.makeText(this, ALREADY_GUESSED_MESSAGE, Toast.LENGTH_SHORT).show();
                 break;
-            case 1: Toast.makeText(this, WINNER_MESSAGE, Toast.LENGTH_SHORT).show();
+            case 1: win();
                 break;
             case 2: Toast.makeText(this, CORRECT_LETTER_MESSAGE, Toast.LENGTH_SHORT).show();
                 break;
@@ -150,10 +176,12 @@ public class HangmanActivity extends AppCompatActivity {
                 Toast.makeText(this, LOSE_MESSAGE, Toast.LENGTH_SHORT).show();
                 if(playerTurn == 1) {
                     playerTurn = 2;
+                    WINNER_MESSAGE = "Player " + playerTurn + " wins!";
                     tvPlayerTurn.setText(PLAYER_TWO);
 
                 } else {
                     playerTurn = 1;
+                    WINNER_MESSAGE = "Player " + playerTurn + " wins!";
                     tvPlayerTurn.setText(PLAYER_ONE);
                 }
 
@@ -173,5 +201,25 @@ public class HangmanActivity extends AppCompatActivity {
         // Word Status Update
         wordStatus = game.getStatusDisplay();
         tvWordStatus.setText(wordStatus);
+    }
+
+    // Game won
+    public void win() {
+        Intent intent = new Intent();
+
+        Toast.makeText(this, WINNER_MESSAGE, Toast.LENGTH_SHORT).show();
+        if(playerTurn == 1) {
+            player1_score++;
+
+        } else {
+            player2_score++;
+
+        }
+        intent.putExtra(MainActivity.P1SCORE, player1_score);
+        intent.putExtra(MainActivity.P2SCORE, player2_score);
+        intent.putExtra(MainActivity.P1NAME, player1_name);
+        intent.putExtra(MainActivity.P2NAME, player2_name);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

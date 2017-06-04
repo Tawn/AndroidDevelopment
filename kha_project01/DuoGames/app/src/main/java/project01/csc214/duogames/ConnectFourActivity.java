@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class ConnectFourActivity extends AppCompatActivity {
 
     private ConnectFourGame mGame;
@@ -18,10 +20,13 @@ public class ConnectFourActivity extends AppCompatActivity {
     private ImageView mPosition;
     private int columnOneRow, columnTwoRow,columnThreeRow,columnFourRow,
             columnFiveRow, columnSixRow, columnSevenRow;
-    private int playerTurn;
+    private int playerTurn, playerStartTurn;
     private String ERROR_MESSAGE, EXIT_MESSAGE, PLAYER_ONE_TURN, PLAYER_TWO_TURN;
     private RelativeLayout mC4;
-    private TextView mPlayerTurn;
+    private TextView tvPlayerTurn, tvPlayer1Name, tvPlayer2Name, tvPlayer1Score, tvPlayer2Score;
+    private String player1_name, player2_name;
+    private int player1_score, player2_score;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,22 +37,58 @@ public class ConnectFourActivity extends AppCompatActivity {
         mGame = new ConnectFourGame();
 
         // Initialize variables
-        playerOneTurn = true;
-        playerTurn = 1;
         columnOneRow = 6; columnTwoRow = 6; columnThreeRow = 6; columnFourRow = 6;
         columnFiveRow = 6; columnSixRow = 6; columnSevenRow = 6;
         ERROR_MESSAGE = "Invalid Move"; // can't pass row 1
         EXIT_MESSAGE = "Press MAIN MENU again to confirm";
         PLAYER_ONE_TURN = "Player 1 Turn";
         PLAYER_TWO_TURN = "Player 2 Turn";
+
+        // Retrieve current results
+        Intent intent = getIntent();
+
+        tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
+        tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
+        tvPlayer1Name = (TextView)findViewById(R.id.player1);
+        tvPlayer2Name = (TextView)findViewById(R.id.player2);
+
+        player1_score = intent.getIntExtra(MainActivity.P1SCORE, 0);
+        player2_score = intent.getIntExtra(MainActivity.P2SCORE, 0);
+        player1_name = intent.getStringExtra(MainActivity.P1NAME);
+        player2_name = intent.getStringExtra(MainActivity.P2NAME);
+
+        String p1ScoreString = Integer.toString(player1_score);
+        String p2ScoreString = Integer.toString(player2_score);
+
+        tvPlayer1Score.setText(p1ScoreString);
+        tvPlayer2Score.setText(p2ScoreString);
+        tvPlayer1Name.setText(player1_name);
+        tvPlayer2Name.setText(player2_name);
+
+        mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
+        // Determine players turn
+        playerStartTurn = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
+        tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
+
+        if(playerStartTurn == 1) {
+            playerTurn = 1;
+            playerOneTurn = true;
+        } else {
+            playerTurn = 2;
+            mC4.setBackgroundColor(Color.YELLOW);
+            tvPlayerTurn.setText(PLAYER_TWO_TURN);
+            playerOneTurn = false;
+        }
+
     }
+
 
     public void MainMenuPress(View view) {
 
         // If Main Menu is pressed Twice in a Row
         if(exitConfirm) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            setResult(RESULT_CANCELED);
+            finish();
 
         } else { // If other buttons are pressed instead
             Toast.makeText(this, EXIT_MESSAGE, Toast.LENGTH_SHORT).show();
@@ -88,19 +129,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -144,19 +185,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -208,19 +249,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -265,19 +306,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -322,19 +363,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -379,19 +420,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -435,19 +476,19 @@ public class ConnectFourActivity extends AppCompatActivity {
 
         if(validMove) {
             mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
-            mPlayerTurn = (TextView)findViewById(R.id.player_turn);
+            tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
             // Set Piece
             if (playerOneTurn) {
                 mPosition.setImageResource(R.mipmap.red_piece);
                 mC4.setBackgroundColor(Color.YELLOW);
-                mPlayerTurn.setText(PLAYER_TWO_TURN);
+                tvPlayerTurn.setText(PLAYER_TWO_TURN);
                 playerTurn = 2;
                 playerOneTurn = false;
             } else { // Player Two's Turn
                 mPosition.setImageResource(R.mipmap.yellow_piece);
                 mC4.setBackgroundColor(Color.RED);
-                mPlayerTurn.setText(PLAYER_ONE_TURN);
+                tvPlayerTurn.setText(PLAYER_ONE_TURN);
                 playerTurn = 1;
                 playerOneTurn = true;
             }
@@ -462,13 +503,40 @@ public class ConnectFourActivity extends AppCompatActivity {
     }
 
     public void checkResult() {
-        if(mGame.checkResult() == 1) {
-            Toast.makeText(this, "Player 1 Wins!!!!!", Toast.LENGTH_SHORT).show();
+
+        int gameResult = mGame.checkResult();
+
+        if(gameResult == 1) {
+            Toast.makeText(this, "Player 1 Wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Player 1 Score +1", Toast.LENGTH_SHORT).show();
+            player1_score++;
         } else
-        if(mGame.checkResult() == 2) {
-            Toast.makeText(this, "Player 2 Wins!!!!!", Toast.LENGTH_SHORT).show();
+        if(gameResult == 2) {
+            Toast.makeText(this, "Player 2 Wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Player 2 Score +1", Toast.LENGTH_SHORT).show();
+            player2_score++;
         }
 
+        if(gameResult == 1 || gameResult == 2) {
+            Intent intent = new Intent();
+            intent.putExtra(MainActivity.P1SCORE, player1_score);
+            intent.putExtra(MainActivity.P2SCORE, player2_score);
+            intent.putExtra(MainActivity.P1NAME, player1_name);
+            intent.putExtra(MainActivity.P2NAME, player2_name);
+
+            // other player starts a the game
+            if(playerStartTurn == 1) {
+                playerStartTurn = 2;
+            } else {
+                playerStartTurn = 1;
+            }
+            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurn);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+
+
     }
+
 
 }

@@ -86,7 +86,9 @@ public class HangmanGame {
             count++;
 
             if(wordToGuess.contains(guess)) { // Correct letter
-                return 2;
+
+                // returns 1 for complete 2 for not complete
+                return checkCompleteLetters();
 
             } else { // Incorrect Letter
                 return 4;
@@ -123,6 +125,14 @@ public class HangmanGame {
             }
         }
         return false;
+    }
+
+    public int checkCompleteLetters() {
+        if (getStatusDisplay().contains("_")) { // Incomplete
+            return 2;
+        } else { // Complete
+            return 1;
+        }
     }
 
 }

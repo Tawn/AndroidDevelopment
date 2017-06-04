@@ -33,6 +33,11 @@ public class ConnectFourGame {
         else return 0;
     }
 
+    public void reset() {
+        board = new int[COLUMN][ROW];
+
+    }
+
     public boolean checkBoardResult(int player) {
         int count = 0;
 
