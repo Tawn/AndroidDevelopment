@@ -16,28 +16,28 @@ public class HangmanActivity extends AppCompatActivity {
     // Game
     private HangmanGame game;
 
-    // Members
+    // Saved Instances
+    private String player1_name, player2_name;
+    private int player1_score, player2_score;
+
+    // Game Displays
     private ImageView ivStatus;
     private TextView tvPlayerTurn, tvLetterUsed, tvWordStatus;
     private EditText etGuess;
 
     // Integers
     private int playerTurn, attemptsLeft, guessCount;
+    private int player1_guesses, player2_guesses;
     private int playerStartTurnHangman, playerStartTurnConnectFour;
 
-    // String w/Messages
-    private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE, WRONG_LETTER_MESSAGE,
-                    CORRECT_LETTER_MESSAGE, LOSE_MESSAGE, EXIT_MESSAGE,
-            displayGuessed, wordStatus,
-            PLAYER_ONE, PLAYER_TWO;
+    // Game Messages
+    private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE;
+    private String CORRECT_LETTER_MESSAGE, LOSE_MESSAGE, EXIT_MESSAGE;
+    private String WRONG_LETTER_MESSAGE, displayGuessed, wordStatus;
+    private String PLAYER_TWO, START;
 
     // Boolean
     private boolean exitConfirm;
-
-    // Stored Scores
-    private TextView tvPlayer1Name, tvPlayer2Name, tvPlayer1Score, tvPlayer2Score;
-    private String player1_name, player2_name;
-    private int player1_score, player2_score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +46,25 @@ public class HangmanActivity extends AppCompatActivity {
 
         // Game
         game = new HangmanGame();
-
-        // Integers
+        START = "DELETE YOUR INPUT BEFORE PASSING THE PHONE TO THE OTHER PLAYER!";
+        Toast.makeText(this, START, Toast.LENGTH_LONG).show();
+        // Game Start
         attemptsLeft = 8;
         guessCount = 0;
+        player1_guesses = 0;
+        player2_guesses = 0;
 
-        // Members
+        // Display Setting
         etGuess = (EditText)findViewById(R.id.guess);
         ivStatus = (ImageView)findViewById(R.id.game_status);
         tvLetterUsed = (TextView)findViewById(R.id.letter_used);
         tvWordStatus = (TextView)findViewById(R.id.word_status);
         tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
-        // Strings
+        // Message Set
         ALREADY_GUESSED_MESSAGE = "Already guessed that letter";
         WRONG_WORD_MESSAGE = "Wrong Guess";
         WRONG_LETTER_MESSAGE = "Wrong letter";
-        WINNER_MESSAGE = "Player " + playerTurn + " wins!";
         CORRECT_LETTER_MESSAGE = "You got it!";
         LOSE_MESSAGE = "You Lose. Next Players Turn";
         displayGuessed = "Used: ";
@@ -75,10 +77,10 @@ public class HangmanActivity extends AppCompatActivity {
         // Retrieve current results
         Intent intent = getIntent();
 
-        tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
-        tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
-        tvPlayer1Name = (TextView)findViewById(R.id.player1);
-        tvPlayer2Name = (TextView)findViewById(R.id.player2);
+        TextView tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
+        TextView tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
+        TextView tvPlayer1Name = (TextView)findViewById(R.id.player1);
+        TextView tvPlayer2Name = (TextView)findViewById(R.id.player2);
 
         player1_score = intent.getIntExtra(MainActivity.P1SCORE, 0);
         player2_score = intent.getIntExtra(MainActivity.P2SCORE, 0);
@@ -95,22 +97,16 @@ public class HangmanActivity extends AppCompatActivity {
 
         playerStartTurnConnectFour = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
 
-        PLAYER_ONE = player1_name + "'s Turn";
-        PLAYER_TWO = player2_name + "'s Turn";
-
-        // Getting Player start
+        // Determining Which Player start
         playerStartTurnHangman = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
-        if (playerStartTurnHangman == 1) {
-            playerTurn = 1;
-            tvPlayerTurn.setText(PLAYER_ONE);
-            WINNER_MESSAGE = player1_name + " wins!";
-
+        if(playerStartTurnHangman == 1) {
+            tvPlayerTurn.setText(player1_name + "'s Turn");
+            PLAYER_TWO = player2_name + "'s Turn";
         } else {
-            playerTurn = 2;
-            tvPlayerTurn.setText(PLAYER_TWO);
-            WINNER_MESSAGE = player2_name + " wins!";
-
+            tvPlayerTurn.setText(player2_name + "'s Turn");
+            PLAYER_TWO = player1_name + "'s Turn";
         }
+        playerTurn = 1;
     }
 
     public void MainMenuPress(View view) {
@@ -141,9 +137,20 @@ public class HangmanActivity extends AppCompatActivity {
                 break;
             case 3: Toast.makeText(this, WRONG_WORD_MESSAGE, Toast.LENGTH_SHORT).show();
                 attemptsLeft--;
+                if(playerTurn == 1) {
+                    player1_guesses++;
+                } else {
+                    player2_guesses++;
+                }
                 break;
             case 4: Toast.makeText(this, WRONG_LETTER_MESSAGE, Toast.LENGTH_SHORT).show();
                 attemptsLeft--;
+
+                if(playerTurn == 1) {
+                    player1_guesses++;
+                } else {
+                    player2_guesses++;
+                }
                 break;
             default:
                 break;
@@ -191,17 +198,8 @@ public class HangmanActivity extends AppCompatActivity {
                 break;
             case 0: ivStatus.setImageResource(R.drawable.stage8);
                 Toast.makeText(this, LOSE_MESSAGE, Toast.LENGTH_SHORT).show();
-                if(playerTurn == 1) {
-                    playerTurn = 2;
-                    WINNER_MESSAGE = player1_name + " wins!";
-                    tvPlayerTurn.setText(PLAYER_TWO);
-
-                } else {
-                    playerTurn = 1;
-                    WINNER_MESSAGE = player2_name + " wins!";
-                    tvPlayerTurn.setText(PLAYER_ONE);
-                }
-
+                playerTurn = 2;
+                tvPlayerTurn.setText(PLAYER_TWO);
                 // Reset Game
                 gameReset();
 
@@ -222,33 +220,70 @@ public class HangmanActivity extends AppCompatActivity {
 
     // Game won
     public void win() {
-        Intent intent = new Intent();
+        // If both players had a turn
+        if(playerTurn == 2) {
+            Intent intent = new Intent();
 
-        Toast.makeText(this, WINNER_MESSAGE, Toast.LENGTH_SHORT).show();
-        if(playerTurn == 1) {
-            Toast.makeText(this, player1_name + " Score +1", Toast.LENGTH_SHORT).show();
-            player1_score++;
+            if(player1_guesses < player2_guesses) {
+                if (playerStartTurnHangman == 1) {
+                    WINNER_MESSAGE = player1_name + " wins!";
+                    player1_score++;
+                } else {
+                    WINNER_MESSAGE = player2_name + " wins!";
+                    player2_score++;
+                }
+            } else if (player2_guesses < player1_guesses) {
+                if (playerStartTurnHangman == 1) {
+                    WINNER_MESSAGE = player2_name + " wins!";
+                    player2_score++;
+                } else {
+                    WINNER_MESSAGE = player1_name + " wins!";
+                    player1_score++;
+                }
+            } else {
+                WINNER_MESSAGE = "Draw!";
+            }
 
+            Toast.makeText(this, WINNER_MESSAGE, Toast.LENGTH_SHORT).show();
+            if (playerStartTurnHangman == 1) {
+                Toast.makeText(this, player1_name + " miss: " + player1_guesses, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, player2_name + " miss: " + player2_guesses, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, player2_name + " miss: " + player1_guesses, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, player1_name + " miss: " + player2_guesses, Toast.LENGTH_LONG).show();
+            }
+
+            if (playerTurn == 1) {
+                Toast.makeText(this, player1_name + " Score +1", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, player2_name + " Score +1", Toast.LENGTH_SHORT).show();
+            }
+            intent.putExtra(MainActivity.P1SCORE, player1_score);
+            intent.putExtra(MainActivity.P2SCORE, player2_score);
+            intent.putExtra(MainActivity.P1NAME, player1_name);
+            intent.putExtra(MainActivity.P2NAME, player2_name);
+            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurnConnectFour);
+
+            // Switch start turns
+            if (playerStartTurnHangman == 1) {
+                playerStartTurnHangman = 2;
+            } else {
+                playerStartTurnHangman = 1;
+            }
+
+            intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurnHangman);
+            setResult(RESULT_OK, intent);
+            finish();
         } else {
-            Toast.makeText(this, player2_name + " Score +1", Toast.LENGTH_SHORT).show();
-            player2_score++;
+            if(playerStartTurnHangman == 1) {
+                Toast.makeText(this, player2_name + " turn", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, player1_name + " turn", Toast.LENGTH_SHORT).show();
+            }
+            playerTurn = 2;
+            tvPlayerTurn.setText(PLAYER_TWO);
+            gameReset();
 
         }
-        intent.putExtra(MainActivity.P1SCORE, player1_score);
-        intent.putExtra(MainActivity.P2SCORE, player2_score);
-        intent.putExtra(MainActivity.P1NAME, player1_name);
-        intent.putExtra(MainActivity.P2NAME, player2_name);
-        intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurnConnectFour);
-
-        // Switch start turns
-        if(playerStartTurnHangman == 1) {
-            playerStartTurnHangman = 2;
-        } else {
-            playerStartTurnHangman = 1;
-        }
-
-        intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurnHangman);
-        setResult(RESULT_OK, intent);
-        finish();
     }
 }

@@ -14,18 +14,30 @@ import org.w3c.dom.Text;
 
 public class ConnectFourActivity extends AppCompatActivity {
 
+    // Game
     private ConnectFourGame mGame;
 
-    private boolean playerOneTurn, validMove, exitConfirm;
-    private ImageView mPosition;
-    private int columnOneRow, columnTwoRow,columnThreeRow,columnFourRow,
-            columnFiveRow, columnSixRow, columnSevenRow;
-    private int playerTurn, playerStartTurnConnectFour, playerStartTurnHangman;
-    private String ERROR_MESSAGE, EXIT_MESSAGE, PLAYER_ONE_TURN, PLAYER_TWO_TURN;
-    private RelativeLayout mC4;
-    private TextView tvPlayerTurn, tvPlayer1Name, tvPlayer2Name, tvPlayer1Score, tvPlayer2Score;
-    private String player1_name, player2_name;
+    // Saved Instances
+    private int connectFourTurn, hangmanTurn;
     private int player1_score, player2_score;
+    private String player1_name, player2_name;
+
+    // Displays
+    private ImageView mPosition;
+    private TextView tvPlayerTurn;
+    private RelativeLayout mC4;
+
+    // Game Variables
+    private boolean playerOneTurn;
+    private boolean validMove;
+    private boolean exitConfirm;
+    private int columnOneRow, columnTwoRow,columnThreeRow,columnFourRow;
+    private int columnFiveRow, columnSixRow, columnSevenRow;
+    private int playerTurn, numberOfMoves;
+
+    // Game Messages
+    private String ERROR_MESSAGE, EXIT_MESSAGE;
+    private String PLAYER_ONE_TURN, PLAYER_TWO_TURN;
 
 
     @Override
@@ -45,10 +57,10 @@ public class ConnectFourActivity extends AppCompatActivity {
         // Retrieve current results
         Intent intent = getIntent();
 
-        tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
-        tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
-        tvPlayer1Name = (TextView)findViewById(R.id.player1);
-        tvPlayer2Name = (TextView)findViewById(R.id.player2);
+        TextView tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
+        TextView tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
+        TextView tvPlayer1Name = (TextView)findViewById(R.id.player1);
+        TextView tvPlayer2Name = (TextView)findViewById(R.id.player2);
 
         player1_score = intent.getIntExtra(MainActivity.P1SCORE, 0);
         player2_score = intent.getIntExtra(MainActivity.P2SCORE, 0);
@@ -65,14 +77,14 @@ public class ConnectFourActivity extends AppCompatActivity {
         PLAYER_ONE_TURN = player1_name + "'s Turn";
         PLAYER_TWO_TURN = player2_name + "'s Turn";
 
-        playerStartTurnHangman = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
+        hangmanTurn = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
 
         mC4 = (RelativeLayout)findViewById(R.id.c4_menu);
         // Determine players turn
-        playerStartTurnConnectFour = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
+        connectFourTurn = intent.getIntExtra(MainActivity.CONNECT_FOUR_TURN, 1);
         tvPlayerTurn = (TextView)findViewById(R.id.player_turn);
 
-        if(playerStartTurnConnectFour == 1) {
+        if(connectFourTurn == 1) {
             playerTurn = 1;
             tvPlayerTurn.setText(PLAYER_ONE_TURN);
             playerOneTurn = true;
@@ -506,7 +518,7 @@ public class ConnectFourActivity extends AppCompatActivity {
     }
 
     public void checkResult() {
-
+        numberOfMoves++;
         int gameResult = mGame.checkResult();
 
         if(gameResult == 1) {
@@ -519,21 +531,24 @@ public class ConnectFourActivity extends AppCompatActivity {
             Toast.makeText(this, player2_name + " Score +1", Toast.LENGTH_SHORT).show();
             player2_score++;
         }
+        if(numberOfMoves == 42) {
+            Toast.makeText(this, "Game is a Draw!", Toast.LENGTH_LONG).show();
 
-        if(gameResult == 1 || gameResult == 2) {
+        }
+        if(gameResult == 1 || gameResult == 2 || numberOfMoves == 42) {
             Intent intent = new Intent();
             intent.putExtra(MainActivity.P1SCORE, player1_score);
             intent.putExtra(MainActivity.P2SCORE, player2_score);
             intent.putExtra(MainActivity.P1NAME, player1_name);
             intent.putExtra(MainActivity.P2NAME, player2_name);
-            intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurnHangman);
+            intent.putExtra(MainActivity.HANGMAN_TURN, hangmanTurn);
             // other player starts a the game
-            if(playerStartTurnConnectFour == 1) {
-                playerStartTurnConnectFour = 2;
+            if(connectFourTurn == 1) {
+                connectFourTurn = 2;
             } else {
-                playerStartTurnConnectFour = 1;
+                connectFourTurn = 1;
             }
-            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, playerStartTurnConnectFour);
+            intent.putExtra(MainActivity.CONNECT_FOUR_TURN, connectFourTurn);
             setResult(RESULT_OK, intent);
             finish();
         }

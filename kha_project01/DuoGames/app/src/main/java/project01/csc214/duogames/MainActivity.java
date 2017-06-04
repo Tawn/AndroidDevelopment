@@ -8,34 +8,32 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Saved Instances
+    private String player1_name, player2_name;
+    private int hangmanTurn, connectFourTurn;
     private int player1_score, player2_score;
+
+    // Game Display
+    private TextView tvPlayer1Name, tvPlayer2Name;
     private TextView tvPlayer1Score, tvPlayer2Score;
 
-    private String player1_name, player2_name;
-    private TextView tvPlayer1Name, tvPlayer2Name;
-
+    // STRING_KEY
     static final String P1NAME = "PLAYER 1 NAME";
     static final String P2NAME = "PLAYER 2 NAME";
     static final String P1SCORE = "PLAYER 1 SCORE";
     static final String P2SCORE = "PLAYER 2 SCORE";
-
-    // Connect 4 Turn & Hangman Turn
     static final String HANGMAN_TURN = "PLAYER TURN HANGMAN";
     static final String CONNECT_FOUR_TURN = "PLAYER TURN CONNECT-FOUR";
-    private int hangmanTurn;
-    private int connectFourTurn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize Variables
+        // Initialize Displays
         tvPlayer1Score = (TextView)findViewById(R.id.p1_score);
         tvPlayer2Score = (TextView)findViewById(R.id.p2_score);
-//
-//        player1_score = Integer.parseInt(tvPlayer1Score.toString());
-//        player2_score = Integer.parseInt(tvPlayer2Score.toString());
 
         tvPlayer1Name = (TextView)findViewById(R.id.player1);
         tvPlayer2Name = (TextView)findViewById(R.id.player2);
@@ -43,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         player1_name = tvPlayer1Name.getText().toString();
         player2_name = tvPlayer2Name.getText().toString();
 
+        // Player 1 Start (Alternates after every win)
         hangmanTurn = 1;
         connectFourTurn = 1;
 
@@ -83,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     *  Updates Information from other Activities
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

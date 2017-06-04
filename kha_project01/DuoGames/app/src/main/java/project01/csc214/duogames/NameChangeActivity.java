@@ -10,7 +10,7 @@ public class NameChangeActivity extends AppCompatActivity {
 
     private EditText etPlayerOne, etPlayerTwo;
 
-    // Stored information
+    // Saved Instances
     private int playerStartHangman, playerStartConnectFour;
     private String playerOneName, playerTwoName;
     private int p1Score, p2Score;
