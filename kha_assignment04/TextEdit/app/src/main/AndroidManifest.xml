@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChangeFontActivity"></activity>
+        <activity android:name=".ChangeFontActivity" />
+        <activity android:name=".ChangeMessageActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

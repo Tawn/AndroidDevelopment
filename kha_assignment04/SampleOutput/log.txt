@@ -1,0 +1,55 @@
+06-01 14:40:30.227 15335-15335/? I/art: Not late-enabling -Xcheck:jni (already on)
+06-01 14:40:30.229 15335-15335/? W/art: Unexpected CPU variant for X86 using defaults: x86
+06-01 14:40:30.504 15335-15335/assignment03.csc214.restoringstates W/System: ClassLoader referenced unknown path: /data/app/assignment03.csc214.restoringstates-2/lib/x86
+06-01 14:40:30.527 15335-15335/assignment03.csc214.restoringstates I/InstantRun: starting instant run server: is main process
+06-01 14:40:30.651 15335-15335/assignment03.csc214.restoringstates W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+06-01 14:40:30.819 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:30.822 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:30.824 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates I/OpenGLRenderer: Initialized EGL, version 1.4
+06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates D/OpenGLRenderer: Swap behavior 1
+06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates D/OpenGLRenderer: Swap behavior 0
+06-01 14:40:30.976 15335-15335/assignment03.csc214.restoringstates W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+06-01 14:40:42.180 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:42.187 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:42.187 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:42.209 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:42.209 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:42.210 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:47.005 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:47.011 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:47.011 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:47.026 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:47.026 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:47.030 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:50.074 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:50.077 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:50.077 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:50.094 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:50.095 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:50.097 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:53.438 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:53.442 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:53.442 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:53.458 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:53.458 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:53.461 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:56.490 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:56.493 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:56.493 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:56.508 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:56.508 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:56.510 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:40:58.891 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:40:58.895 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:40:58.895 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:40:58.913 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:40:58.914 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:40:58.915 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-01 14:41:03.494 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
+06-01 14:41:03.497 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
+06-01 14:41:03.497 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
+06-01 14:41:03.509 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
+06-01 14:41:03.509 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
+06-01 14:41:03.512 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed

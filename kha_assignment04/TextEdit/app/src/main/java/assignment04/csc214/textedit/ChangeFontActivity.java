@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 public class ChangeFontActivity extends AppCompatActivity {
 
     private CheckBox cbBold, cbItalic, cbUnderline;
+    private String savedText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class ChangeFontActivity extends AppCompatActivity {
         cbBold.setChecked(intent.getBooleanExtra(MainActivity.SET_BOLD, false));
         cbItalic.setChecked(intent.getBooleanExtra(MainActivity.SET_ITALICS, false));
         cbUnderline.setChecked(intent.getBooleanExtra(MainActivity.SET_UNDERLINE, false));
+        savedText = intent.getStringExtra(MainActivity.SAVED_MESSAGE);
     }
 
     public void submitButtonPress(View view) {
@@ -31,6 +33,7 @@ public class ChangeFontActivity extends AppCompatActivity {
         data.putExtra(MainActivity.SET_BOLD, cbBold.isChecked());
         data.putExtra(MainActivity.SET_ITALICS, cbItalic.isChecked());
         data.putExtra(MainActivity.SET_UNDERLINE, cbUnderline.isChecked());
+        data.putExtra(MainActivity.SAVED_MESSAGE, savedText);
         setResult(RESULT_OK, data);
         finish();
     }

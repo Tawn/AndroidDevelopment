@@ -9,4 +9,10 @@
     <string name="underline">Underline</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="set">set</string>
+    <string name="enter_a_new_message">Enter a new message</string>
+    <string name="message_edit">Message Edit</string>
 </resources>

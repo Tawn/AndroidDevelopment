@@ -11,14 +11,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // For storing and retrieving stoed data
     static final String SET_BOLD = "assignment04.csc214.BOLD";
     static final String SET_ITALICS = "assignment04.csc214.ITALICS";
     static final String SET_UNDERLINE = "assignment04.csc214.UNDERLINE";
+    static final String SAVED_MESSAGE = "MESSAGE";
 
     private TextView mMainText;
     private static final int RC_FONT = 2;
     boolean textIsUnderlined;
-    public static final String SAVED_MESSAGE = "MESSAGE";
 
 
     @Override
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMainText = (TextView)findViewById(R.id.text_edit);
 
+        // Original content
         if(savedInstanceState != null) {
             String message = savedInstanceState.getString(SAVED_MESSAGE);
             mMainText.setText(message);
@@ -55,11 +57,18 @@ public class MainActivity extends AppCompatActivity {
         boolean underline = savedInstanceState.getBoolean(SET_UNDERLINE);
         mMainText.setText(savedInstanceState.getString(SAVED_MESSAGE));
         updateFont(bold, italics, underline);
+
     }
 
+    // Result of Both Font and Message changes
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if(resultCode == RESULT_OK) {
+            CharSequence message = data.getCharSequenceExtra(SAVED_MESSAGE);
+            mMainText.setText(message);
+        }
 
         // Font
         if( resultCode != RESULT_CANCELED ) {
@@ -68,10 +77,17 @@ public class MainActivity extends AppCompatActivity {
             boolean underline = data.getBooleanExtra(SET_UNDERLINE, false);
             updateFont(bold, italics, underline);
         }
+
+
     }
 
     public void changeFontButtonPress(View view) {
         Intent intent = new Intent(this, ChangeFontActivity.class);
+
+        // Store Message
+        intent.putExtra(SAVED_MESSAGE, mMainText.getText().toString());
+
+        // Store Font Data
         Typeface typeface = mMainText.getTypeface();
         intent.putExtra(SET_BOLD, typeface.isBold());
         intent.putExtra(SET_ITALICS, typeface.isItalic());
@@ -80,6 +96,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeMessageButtonPress(View view) {
+        Intent intent = new Intent(this, ChangeMessageActivity.class);
+
+
+        // Store Message
+        intent.putExtra(SAVED_MESSAGE, mMainText.getText().toString());
+
+
+        // Store Font Data
+        Typeface typeface = mMainText.getTypeface();
+        intent.putExtra(SET_BOLD, typeface.isBold());
+        intent.putExtra(SET_ITALICS, typeface.isItalic());
+        intent.putExtra(SET_UNDERLINE, textIsUnderlined);
+        startActivityForResult(intent, 0);
+
     }
 
     private void updateFont(boolean bold, boolean italics, boolean underline) {
