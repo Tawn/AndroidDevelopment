@@ -1,7 +1,7 @@
 Thanh Kha '19
-Assignment03
+Assignment04
 Bobby
 
 ASSIGNMENT DESCRIPTION
 
-Learning how to use ImageButton; similar to a regular button, except you’re able to include images. Another new feature was learning to store and restore states; in this assignment, we had counted the number of rotation. Whenever the screen rotates, the program will store the intended information then can be restored through the onSave and onRestore methods provided. This assignment has given more practice managing the regular widgets; manipulating their state and behaviors. 
+This assignment has enabled me to practice how to persist the data when creating and destroying new activities. This included practice with fragments; there was more emphasis towards data transferring from activities-to-activities. This assignment was mixed with Assignment 03; using the onSaveInstance and onRestoreInstance methods; with logging every action. We have also learned how to configure the landscape and portrait of the application. 

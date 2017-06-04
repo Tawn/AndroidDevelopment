@@ -1,55 +1,94 @@
-06-01 14:40:30.227 15335-15335/? I/art: Not late-enabling -Xcheck:jni (already on)
-06-01 14:40:30.229 15335-15335/? W/art: Unexpected CPU variant for X86 using defaults: x86
-06-01 14:40:30.504 15335-15335/assignment03.csc214.restoringstates W/System: ClassLoader referenced unknown path: /data/app/assignment03.csc214.restoringstates-2/lib/x86
-06-01 14:40:30.527 15335-15335/assignment03.csc214.restoringstates I/InstantRun: starting instant run server: is main process
-06-01 14:40:30.651 15335-15335/assignment03.csc214.restoringstates W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
-06-01 14:40:30.819 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:30.822 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:30.824 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates I/OpenGLRenderer: Initialized EGL, version 1.4
-06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates D/OpenGLRenderer: Swap behavior 1
-06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
-06-01 14:40:30.911 15335-15365/assignment03.csc214.restoringstates D/OpenGLRenderer: Swap behavior 0
-06-01 14:40:30.976 15335-15335/assignment03.csc214.restoringstates W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
-06-01 14:40:42.180 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:42.187 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:42.187 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:42.209 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:42.209 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:42.210 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:47.005 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:47.011 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:47.011 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:47.026 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:47.026 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:47.030 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:50.074 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:50.077 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:50.077 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:50.094 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:50.095 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:50.097 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:53.438 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:53.442 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:53.442 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:53.458 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:53.458 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:53.461 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:56.490 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:56.493 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:56.493 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:56.508 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:56.508 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:56.510 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:40:58.891 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:40:58.895 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:40:58.895 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:40:58.913 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:40:58.914 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:40:58.915 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
-06-01 14:41:03.494 15335-15335/assignment03.csc214.restoringstates D/Thanh: Paused
-06-01 14:41:03.497 15335-15335/assignment03.csc214.restoringstates D/Thanh: Stopped
-06-01 14:41:03.497 15335-15335/assignment03.csc214.restoringstates D/Thanh: Destroyed
-06-01 14:41:03.509 15335-15335/assignment03.csc214.restoringstates D/Thanh: Creating
-06-01 14:41:03.509 15335-15335/assignment03.csc214.restoringstates D/Thanh: Started
-06-01 14:41:03.512 15335-15335/assignment03.csc214.restoringstates D/Thanh: Resumed
+06-03 21:13:17.753 5209-5209/? I/art: Not late-enabling -Xcheck:jni (already on)
+06-03 21:13:17.754 5209-5209/? W/art: Unexpected CPU variant for X86 using defaults: x86
+06-03 21:13:17.895 5209-5209/assignment04.csc214.textedit W/System: ClassLoader referenced unknown path: /data/app/assignment04.csc214.textedit-2/lib/x86
+06-03 21:13:17.922 5209-5209/assignment04.csc214.textedit I/InstantRun: starting instant run server: is main process
+06-03 21:13:18.048 5209-5209/assignment04.csc214.textedit W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+06-03 21:13:18.180 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:13:18.182 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:13:18.331 5209-5237/assignment04.csc214.textedit I/OpenGLRenderer: Initialized EGL, version 1.4
+06-03 21:13:18.331 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: Swap behavior 1
+06-03 21:13:18.331 5209-5237/assignment04.csc214.textedit W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+06-03 21:13:18.331 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: Swap behavior 0
+06-03 21:13:18.404 5209-5209/assignment04.csc214.textedit W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+06-03 21:13:21.912 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:13:21.947 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Started
+06-03 21:13:21.949 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Resumed
+06-03 21:13:22.152 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x9e12e180 (RippleDrawable) with handle 0x9926a5d0
+06-03 21:13:22.492 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:13:29.402 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Submitted
+06-03 21:13:29.409 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Paused
+06-03 21:13:29.422 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Restarted
+06-03 21:13:29.423 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:13:29.424 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:13:29.543 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8ca95980 (RippleDrawable) with handle 0x8ce6f150
+06-03 21:13:29.793 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Stopped
+06-03 21:13:29.794 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Destroyed
+06-03 21:13:48.112 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:13:48.132 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Started
+06-03 21:13:48.132 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Started
+06-03 21:13:48.133 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Resumed
+06-03 21:13:48.133 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Resumed
+06-03 21:13:48.300 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x9e12ef80 (RippleDrawable) with handle 0x8cb9c1a0
+06-03 21:13:48.659 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:13:55.970 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Changed
+06-03 21:13:55.974 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Paused
+06-03 21:13:55.974 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Paused
+06-03 21:13:55.987 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Restarted
+06-03 21:13:55.987 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:13:55.988 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:13:56.078 5209-5209/assignment04.csc214.textedit W/IInputConnectionWrapper: finishComposingText on inactive InputConnection
+06-03 21:13:56.094 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8ca0cf00 (RippleDrawable) with handle 0x8ce6f460
+06-03 21:13:56.347 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Stopped
+06-03 21:13:56.347 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Stopped
+06-03 21:13:56.347 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Destroyed
+06-03 21:13:56.347 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Destroyed
+06-03 21:13:59.693 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:13:59.717 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Started
+06-03 21:13:59.719 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Resumed
+06-03 21:13:59.897 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x9e12e180 (RippleDrawable) with handle 0x8cb9fe60
+06-03 21:14:00.201 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:14:02.284 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Submitted
+06-03 21:14:02.292 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Paused
+06-03 21:14:02.306 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Restarted
+06-03 21:14:02.306 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:14:02.306 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:14:02.432 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8c562280 (RippleDrawable) with handle 0x8c57a540
+06-03 21:14:02.682 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Stopped
+06-03 21:14:02.682 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Destroyed
+06-03 21:14:04.320 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:14:04.321 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:14:04.321 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Destroyed
+06-03 21:14:04.352 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:14:04.353 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:14:07.262 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:14:07.324 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Started
+06-03 21:14:07.324 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Started
+06-03 21:14:07.325 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Resumed
+06-03 21:14:07.325 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Resumed
+06-03 21:14:07.353 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8ca0fc80 (RippleDrawable) with handle 0x8c57a780
+06-03 21:14:07.434 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:14:09.516 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Change Cancelled
+06-03 21:14:09.522 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Paused
+06-03 21:14:09.522 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Paused
+06-03 21:14:09.569 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Restarted
+06-03 21:14:09.570 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:14:09.574 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:14:09.678 5209-5209/assignment04.csc214.textedit W/IInputConnectionWrapper: finishComposingText on inactive InputConnection
+06-03 21:14:09.688 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8ca96b00 (RippleDrawable) with handle 0x8c57a790
+06-03 21:14:09.696 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Stopped
+06-03 21:14:09.696 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Stopped
+06-03 21:14:09.697 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Fragment Activity Destroyed
+06-03 21:14:09.697 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Message Activity Destroyed
+06-03 21:14:20.295 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Paused
+06-03 21:14:20.314 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Started
+06-03 21:14:20.316 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Resumed
+06-03 21:14:20.500 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8ca0f900 (RippleDrawable) with handle 0x8c57a130
+06-03 21:14:20.805 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Stopped
+06-03 21:14:24.317 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Cancelled
+06-03 21:14:24.325 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Paused
+06-03 21:14:24.336 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Restarted
+06-03 21:14:24.337 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Started
+06-03 21:14:24.338 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Main Activity Resumed
+06-03 21:14:24.469 5209-5237/assignment04.csc214.textedit D/OpenGLRenderer: endAllActiveAnimators on 0x8c12cc80 (RippleDrawable) with handle 0x8cb9c090
+06-03 21:14:24.724 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Stopped
+06-03 21:14:24.724 5209-5209/assignment04.csc214.textedit D/TEXT STAGE: Font Activity Destroyed

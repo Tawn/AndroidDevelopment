@@ -65,4 +65,39 @@ public class ChangeMessageFragment extends Fragment {
         return view;
     }
 
+    // Log Indicator
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(MainActivity.TAG, "Fragment Activity Started");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(MainActivity.TAG, "Fragment Activity Resumed");
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(MainActivity.TAG, "Fragment Activity Paused");
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(MainActivity.TAG, "Fragment Activity Stopped");
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(MainActivity.TAG, "Fragment Activity Destroyed");
+
+    }
+
 }

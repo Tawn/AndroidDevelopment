@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CheckBox;
 
 public class ChangeMessageActivity extends Activity
@@ -41,6 +42,7 @@ public class ChangeMessageActivity extends Activity
         data.putExtra(MainActivity.SET_ITALICS, cbItalic);
         data.putExtra(MainActivity.SET_UNDERLINE, cbUnderline);
         setResult(RESULT_OK, data);
+        Log.d(MainActivity.TAG, "Message Changed");
         finish();
     }
 
@@ -48,6 +50,49 @@ public class ChangeMessageActivity extends Activity
     @Override
     public void messageCanceled() {
         setResult(RESULT_CANCELED);
+        Log.d(MainActivity.TAG, "Message Change Cancelled");
         finish();
+    }
+
+    // Log Indicator
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(MainActivity.TAG, "Message Activity Started");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(MainActivity.TAG, "Message Activity Resumed");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(MainActivity.TAG, "Message Activity Paused");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(MainActivity.TAG, "Message Activity Restarted");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(MainActivity.TAG, "Message Activity Stopped");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(MainActivity.TAG, "Message Activity Destroyed");
+
     }
 }

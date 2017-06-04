@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_FONT = 2;
     boolean textIsUnderlined;
 
+    // Log Tag
+    static final String TAG = "TEXT STAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +147,48 @@ public class MainActivity extends AppCompatActivity {
 
         Typeface newTypeface = Typeface.create(typeface, font_settings);
         mMainText.setTypeface(newTypeface);
+
+    }
+
+    // Log Indicator
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Main Activity Started");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "Main Activity Resumed");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "Main Activity Paused");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "Main Activity Restarted");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "Main Activity Stopped");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "Main Activity Destroyed");
 
     }
 }
