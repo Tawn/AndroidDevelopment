@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             String p1Score = Integer.toString(player1_score);
             String p2Score = Integer.toString(player2_score);
             connectFourTurn = data.getIntExtra(CONNECT_FOUR_TURN, 1);
+            hangmanTurn = data.getIntExtra(HANGMAN_TURN, 1);
             tvPlayer1Score.setText(p1Score);
             tvPlayer2Score.setText(p2Score);
         }

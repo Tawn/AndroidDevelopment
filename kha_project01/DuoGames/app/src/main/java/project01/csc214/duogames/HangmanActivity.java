@@ -23,6 +23,7 @@ public class HangmanActivity extends AppCompatActivity {
 
     // Integers
     private int playerTurn, attemptsLeft, guessCount;
+    private int playerStartTurn;
 
     // String w/Messages
     private String ALREADY_GUESSED_MESSAGE, WRONG_WORD_MESSAGE, WINNER_MESSAGE, WRONG_LETTER_MESSAGE,
@@ -47,7 +48,6 @@ public class HangmanActivity extends AppCompatActivity {
         game = new HangmanGame();
 
         // Integers
-        playerTurn = 1;
         attemptsLeft = 8;
         guessCount = 0;
 
@@ -94,6 +94,20 @@ public class HangmanActivity extends AppCompatActivity {
         tvPlayer2Score.setText(p2ScoreString);
         tvPlayer1Name.setText(player1_name);
         tvPlayer2Name.setText(player2_name);
+
+        // Getting Player start
+        playerStartTurn = intent.getIntExtra(MainActivity.HANGMAN_TURN, 1);
+        if (playerStartTurn == 1) {
+            playerTurn = 1;
+            tvPlayerTurn.setText(PLAYER_ONE);
+            WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+
+        } else {
+            playerTurn = 2;
+            tvPlayerTurn.setText(PLAYER_TWO);
+            WINNER_MESSAGE = "Player " + playerTurn + " wins!";
+
+        }
     }
 
     public void MainMenuPress(View view) {
@@ -219,6 +233,15 @@ public class HangmanActivity extends AppCompatActivity {
         intent.putExtra(MainActivity.P2SCORE, player2_score);
         intent.putExtra(MainActivity.P1NAME, player1_name);
         intent.putExtra(MainActivity.P2NAME, player2_name);
+
+        // Switch start turns
+        if(playerStartTurn == 1) {
+            playerStartTurn = 2;
+        } else {
+            playerStartTurn = 1;
+        }
+
+        intent.putExtra(MainActivity.HANGMAN_TURN, playerStartTurn);
         setResult(RESULT_OK, intent);
         finish();
     }
