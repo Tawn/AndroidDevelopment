@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fragmenting</string>
+    <string name="submit">Submit</string>
+    <string name="enter_a_message">Enter a message</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_message_recieved">No Message Recieved</string>
+    <string name="send_back">Send Back</string>
+    <string name="nm">No Message Sent Back</string>
+    <string name="send_message">Send Message</string>
+    <string name="send_a_message_to_bottom_fragment">Send a message to bottom fragment</string>
+</resources>
