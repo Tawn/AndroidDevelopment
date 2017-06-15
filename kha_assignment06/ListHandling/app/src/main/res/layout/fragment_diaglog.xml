@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fl_pokemon"
-    tools:context="assignment06.csc214.listhandling.listview.ListViewActivity">
+    tools:context="assignment06.csc214.listhandling.listview.DiaglogFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:id="@+id/list_view_pokemon"
+    <TextView
+        android:id="@+id/text_view_series"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
