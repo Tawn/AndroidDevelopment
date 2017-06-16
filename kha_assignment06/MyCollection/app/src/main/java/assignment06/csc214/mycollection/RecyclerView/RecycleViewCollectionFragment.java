@@ -39,7 +39,7 @@ public class RecycleViewCollectionFragment extends Fragment {
         RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.collection_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        CollectionAdapter adapter = new CollectionAdapter(Collection.get(getActivity()).getCollection());
+        CollectionAdapter adapter = new CollectionAdapter(Collection.get(getActivity()).getCollection(), RecycleViewCollectionFragment.this);
         mPokemonColleciton = Collection.get(getActivity()).getCollection();
         mRecyclerView.setAdapter(adapter);
         return view;
