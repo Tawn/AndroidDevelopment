@@ -12,6 +12,7 @@ import java.util.List;
 
 import assignment06.csc214.mycollection.DialogListViewFragment;
 import assignment06.csc214.mycollection.ListViewCollectionFragment;
+import assignment06.csc214.mycollection.ViewPagerActivity;
 import assignment06.csc214.mycollection.model.Collection;
 import assignment06.csc214.mycollection.model.Pokemon;
 import assignment06.csc214.mycollection.R;
@@ -31,6 +32,7 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Co
     }
     @Override
     public CollectionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(ViewPagerActivity.TAG, "onCreateViewHolder: New ViewPager created");
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.view_pokemon, parent, false);
         CollectionViewHolder holder = new CollectionViewHolder(view);
@@ -39,10 +41,10 @@ public class CollectionAdapter extends RecyclerView.Adapter<CollectionAdapter.Co
 
     @Override
     public void onBindViewHolder(CollectionViewHolder holder, final int position) {
+        Log.d(ViewPagerActivity.TAG, "onBindViewHolder: Called");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("hehe", "onClick: " + mPokemon.get(position).getName());
                 DialogListViewFragment dialog = new DialogListViewFragment()
                         .newInstance(mPokemon.get(position));
                 dialog.setTargetFragment(fragment, 2);

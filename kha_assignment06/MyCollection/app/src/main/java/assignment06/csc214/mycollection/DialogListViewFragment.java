@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class DialogListViewFragment extends DialogFragment {
     }
 
     public DialogListViewFragment newInstance(Pokemon pokemon) {
+        Log.d(ViewPagerActivity.TAG, "newInstance: Dialog instance invoked");
         DialogListViewFragment dialog = new DialogListViewFragment();
         Bundle args = new Bundle();
         args.putString(ARG_NAME, pokemon.getName());
@@ -43,6 +45,7 @@ public class DialogListViewFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Log.d(ViewPagerActivity.TAG, "onCreateDialog: Dialog Created");
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_dialog_list_view, null);
         Bundle args = getArguments();
         String name = args.getString(ARG_NAME);

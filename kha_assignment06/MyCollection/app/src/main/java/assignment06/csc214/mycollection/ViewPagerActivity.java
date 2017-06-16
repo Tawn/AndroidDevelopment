@@ -14,7 +14,10 @@ import assignment06.csc214.mycollection.RecyclerView.RecycleViewCollectionFragme
 
 public class ViewPagerActivity extends AppCompatActivity {
 
-    ViewPager pager;
+
+    public static final String TAG = "LOG_TAG";
+
+    private ViewPager pager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

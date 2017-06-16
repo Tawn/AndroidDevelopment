@@ -3,6 +3,7 @@ package assignment06.csc214.mycollection;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class ListViewCollectionFragment extends Fragment {
     }
 
     public static ListViewCollectionFragment newInstance(UUID id) {
+        Log.d(ViewPagerActivity.TAG, "newInstance: ListView Fragment instance invoked");
         Bundle args = new Bundle();
         args.putSerializable(ARG_ID, id);
 
@@ -41,6 +43,7 @@ public class ListViewCollectionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d(ViewPagerActivity.TAG, "onCreateView: ListView Fragment Created");
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_view_collection, container, false);
         ListView lvList = (ListView) view.findViewById(R.id.collection_list_view);
