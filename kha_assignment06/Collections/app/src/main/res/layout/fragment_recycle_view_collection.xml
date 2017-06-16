@@ -1,0 +1,10 @@
+<android.support.v7.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0FF"
+    android:id="@+id/collection_recycler_view"
+    tools:context="assignment06.csc214.collections.RecycleViewCollectionFragment">
+
+</android.support.v7.widget.RecyclerView>

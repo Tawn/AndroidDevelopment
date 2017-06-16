@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyCollection</string>
+    <string name="name">Name</string>
+    <string name="type">Type</string>
+    <string name="hp">HP</string>
+    <string name="description">Description</string>
+    <string name="des">Description</string>
+    <string name="catchem">Gotta Catchem All</string>
+</resources>
