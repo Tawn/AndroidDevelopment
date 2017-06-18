@@ -20,14 +20,18 @@ public class UserCursorWrapper extends CursorWrapper {
     }
 
     public User getUser() {
-        Log.i(TAG, "getUser: Getting user.");
+        Log.i(TAG, "getUser: Getting Users");
         UUID id = UUID.fromString(getString(getColumnIndex(Schema.UserTable.Cols.ID)));
         String username = getString(getColumnIndex(Schema.UserTable.Cols.USERNAME));
+        String first = getString(getColumnIndex(Schema.UserTable.Cols.FIRSTNAME));
+        String last = getString(getColumnIndex(Schema.UserTable.Cols.LASTNAME));
         String password = getString(getColumnIndex(Schema.UserTable.Cols.PASSWORD));
 
         User user = new User();
         user.setID(id);
         user.setUsername(username);
+        user.setFirstname(first);
+        user.setLastname(last);
         user.setPassword(password);
         return user;
     }

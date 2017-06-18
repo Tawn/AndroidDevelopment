@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import project02.csc214.myinstagram.model.User;
 
@@ -24,7 +23,7 @@ public class UserDatabase {
     private final List<User> mUsers;
     private final List<String> mUsernames;
     private final Map<String,String> mUserMap;
-
+    private final Map<String,User> mUserKey;
 
     private UserDatabase(Context context) {
         mContext = context.getApplicationContext();
@@ -32,6 +31,8 @@ public class UserDatabase {
         mUsers = new LinkedList<>();
         mUsernames = new LinkedList<>();
         mUserMap = new HashMap<>();
+        mUserKey = new HashMap<>();
+
     }
 
     public static synchronized UserDatabase get(Context context) {
@@ -45,6 +46,7 @@ public class UserDatabase {
         mUsers.clear();
         mUsernames.clear();
         mUserMap.clear();
+        mUserKey.clear();
         UserCursorWrapper wrapper = queryUser(null, null);
 
         try {
@@ -54,6 +56,7 @@ public class UserDatabase {
                 mUsers.add(user);
                 mUsernames.add(user.getUsername());
                 mUserMap.put(user.getUsername(), user.getPassword());
+                mUserKey.put(user.getUsername(), user);
                 wrapper.moveToNext();
             }
         }
@@ -99,12 +102,17 @@ public class UserDatabase {
     public Map<String, String> getUserMap() {
         return mUserMap;
     }
+    public Map<String, User> getUserKey() {
+        return mUserKey;
+    }
 
     private static ContentValues getContentvalues(User user) {
         ContentValues values = new ContentValues();
 
         values.put(Schema.UserTable.Cols.ID, user.getID().toString());
         values.put(Schema.UserTable.Cols.USERNAME, user.getUsername());
+        values.put(Schema.UserTable.Cols.FIRSTNAME, user.getFirstname());
+        values.put(Schema.UserTable.Cols.LASTNAME, user.getLastname());
         values.put(Schema.UserTable.Cols.PASSWORD, user.getPassword());
 
         return values;

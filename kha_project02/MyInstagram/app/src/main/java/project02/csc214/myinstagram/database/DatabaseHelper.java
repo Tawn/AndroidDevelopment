@@ -1,8 +1,10 @@
 package project02.csc214.myinstagram.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 
 /**
@@ -24,6 +26,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + Schema.UserTable.NAME
                 + "(_id integer primary key autoincrement, "
                 + Schema.UserTable.Cols.USERNAME + ", "
+                + Schema.UserTable.Cols.FIRSTNAME + ", "
+                + Schema.UserTable.Cols.LASTNAME + ", "
                 + Schema.UserTable.Cols.PASSWORD + ", "
                 + Schema.UserTable.Cols.ID + ")");
 
@@ -32,5 +36,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void queryData(String sql) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL(sql);
+    }
+
+    public void insertData(String name, byte[] image) {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "INSERT INTO USER IMAGE (NULL, ?, ?, ?)";
+        SQLiteStatement statement = db.compileStatement(sql);
+        statement.bindString(1, name);
+        statement.bindBlob(2, image);
+        statement.executeInsert();
+    }
+
+    public Cursor getData(String sql) {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.rawQuery(sql, null);
     }
 }

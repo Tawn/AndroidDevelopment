@@ -8,9 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
+import java.util.Map;
 
+import project02.csc214.myinstagram.MainActivity;
 import project02.csc214.myinstagram.R;
 import project02.csc214.myinstagram.RecyclerView.CollectionAdapter;
 import project02.csc214.myinstagram.RecyclerView.RecycleViewCollectionFragment;
@@ -26,6 +29,8 @@ public class RecyclerViewProfileFragment extends Fragment {
     private static final String TAG = "RecyclerFragment";
     private RecyclerView mRecyclerView;
     private List<User> mUsers;
+    private Map<String, User> mUserKey;
+    private User mCurrentUser;
     public static final String ARG_ID = "Pokemon ID";
 
     public RecyclerViewProfileFragment() {
@@ -42,6 +47,17 @@ public class RecyclerViewProfileFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mUsers = UserDatabase.get(getContext()).getUsers();
+        mUserKey = UserDatabase.get(getContext()).getUserKey();
+        mCurrentUser = mUserKey.get(MainActivity.CURRENT_USER);
+        String user = mCurrentUser.getUsername();
+        String first = mCurrentUser.getFirstname();
+        String last = mCurrentUser.getLastname();
+        TextView text = (TextView)view.findViewById(R.id.profile_username);
+        TextView text2 = (TextView)view.findViewById(R.id.profile_tv_full_name);
+        text.setText(user);
+        text2.setText(first + " " + last);
+
+        text.setText(user);
 
         // Recycler View of All Users in Database
         CollectionAdapter adapter = new CollectionAdapter(

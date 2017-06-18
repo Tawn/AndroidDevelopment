@@ -1,5 +1,7 @@
 package project02.csc214.myinstagram.signup;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import project02.csc214.myinstagram.MainActivity;
 import project02.csc214.myinstagram.R;
 import project02.csc214.myinstagram.database.UserDatabase;
 import project02.csc214.myinstagram.model.User;
@@ -42,7 +45,6 @@ public class SignupActivity extends AppCompatActivity {
 
     public void signupButtonPress(View view) {
         Log.i(TAG, "signupButtonPress: Creating new user into database.");
-        setResult(RESULT_OK);
         // Database
         mUsername = (EditText)findViewById(R.id.et_signup_username);
         mPassword = (EditText)findViewById(R.id.et_signup_password);
@@ -61,8 +63,13 @@ public class SignupActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
             User user = new User();
             user.setUsername(mUsername.getText().toString());
+            user.setFirstname(mFirstName.getText().toString());
+            user.setLastname(mLastName.getText().toString());
             user.setPassword(mPassword.getText().toString());
             UserDatabase.get(getApplicationContext()).addUser(user);
+            Intent intent = new Intent();
+            intent.putExtra(MainActivity.USER_KEY, user.getUsername());
+            setResult(Activity.RESULT_OK, intent);
             finish();
         }
 
