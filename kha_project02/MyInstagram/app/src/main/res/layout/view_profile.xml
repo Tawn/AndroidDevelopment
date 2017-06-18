@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="project02.csc214.myinstagram.feed.FeedFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <ImageView
+        android:id="@+id/feed_image"
+        android:scaleType="fitXY"
+        android:background="#adf"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7" />
+
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</LinearLayout>

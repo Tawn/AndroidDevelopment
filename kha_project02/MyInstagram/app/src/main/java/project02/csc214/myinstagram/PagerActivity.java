@@ -16,6 +16,7 @@ import java.util.List;
 import project02.csc214.myinstagram.RecyclerView.RecycleViewCollectionFragment;
 import project02.csc214.myinstagram.login.LoginActivity;
 import project02.csc214.myinstagram.profile.ProfileFragment;
+import project02.csc214.myinstagram.profile.RecyclerViewProfileFragment;
 
 public class PagerActivity extends AppCompatActivity {
 
@@ -42,14 +43,14 @@ public class PagerActivity extends AppCompatActivity {
         public static final String TAG = "PageerAdapter";
         private List<Fragment> mFragments;
         private RecycleViewCollectionFragment mFeedFragment;
-        private ProfileFragment mProfileFragment;
+        private RecyclerViewProfileFragment mProfileFragment;
 
         public PagerAdapter(FragmentManager fm) {
             super(fm);
             Log.i(TAG, "PagerAdapter: Constructor invoked");
             mFragments = new ArrayList<>();
             mFeedFragment = new RecycleViewCollectionFragment();
-            mProfileFragment = new ProfileFragment();
+            mProfileFragment = new RecyclerViewProfileFragment();
             mFragments.add(mFeedFragment);
             mFragments.add(mProfileFragment);
 

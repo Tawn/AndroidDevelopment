@@ -10,4 +10,9 @@
     <string name="already">Already have an account?</string>
     <string name="sign_in">Sign in</string>
     <string name="ellipse">...</string>
+    <string name="last_name">Last name</string>
+    <string name="first_name">First name</string>
+    <string name="default_friend">default_friend</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="first_last">First Last</string>
 </resources>

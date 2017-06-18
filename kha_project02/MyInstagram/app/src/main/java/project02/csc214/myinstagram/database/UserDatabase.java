@@ -22,13 +22,15 @@ public class UserDatabase {
     private final Context mContext;
     private final SQLiteDatabase mDatabase;
     private final List<User> mUsers;
-    private final Map<UUID,User> mUserMap;
+    private final List<String> mUsernames;
+    private final Map<String,String> mUserMap;
 
 
     private UserDatabase(Context context) {
         mContext = context.getApplicationContext();
         mDatabase = new DatabaseHelper(mContext).getWritableDatabase();
         mUsers = new LinkedList<>();
+        mUsernames = new LinkedList<>();
         mUserMap = new HashMap<>();
     }
 
@@ -41,6 +43,7 @@ public class UserDatabase {
 
     public List<User> getUsers() {
         mUsers.clear();
+        mUsernames.clear();
         mUserMap.clear();
         UserCursorWrapper wrapper = queryUser(null, null);
 
@@ -49,7 +52,8 @@ public class UserDatabase {
             while(wrapper.isAfterLast() == false) {
                 User user = wrapper.getUser();
                 mUsers.add(user);
-                mUserMap.put(user.getID(), user);
+                mUsernames.add(user.getUsername());
+                mUserMap.put(user.getUsername(), user.getPassword());
                 wrapper.moveToNext();
             }
         }
@@ -58,6 +62,10 @@ public class UserDatabase {
         }
 
         return mUsers;
+    }
+
+    public List<String> getUsernames () {
+        return mUsernames;
     }
 
     private UserCursorWrapper queryUser(String where, String[] args) {
@@ -88,8 +96,8 @@ public class UserDatabase {
                 new String[]{id});
     }
 
-    public User getUser(UUID id) {
-        return mUserMap.get(id);
+    public Map<String, String> getUserMap() {
+        return mUserMap;
     }
 
     private static ContentValues getContentvalues(User user) {

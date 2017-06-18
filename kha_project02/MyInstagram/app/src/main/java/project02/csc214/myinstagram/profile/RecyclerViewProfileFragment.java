@@ -1,4 +1,4 @@
-package project02.csc214.myinstagram.RecyclerView;
+package project02.csc214.myinstagram.profile;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,21 +12,23 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import project02.csc214.myinstagram.R;
+import project02.csc214.myinstagram.RecyclerView.CollectionAdapter;
+import project02.csc214.myinstagram.RecyclerView.RecycleViewCollectionFragment;
 import project02.csc214.myinstagram.database.UserDatabase;
 import project02.csc214.myinstagram.model.User;
 
-
 /**
- * A simple {@link Fragment} subclass.
+ * Created by Tkha on 6/18/17.
  */
-public class RecycleViewCollectionFragment extends Fragment {
+
+public class RecyclerViewProfileFragment extends Fragment {
 
     private static final String TAG = "RecyclerFragment";
     private RecyclerView mRecyclerView;
     private List<User> mUsers;
     public static final String ARG_ID = "Pokemon ID";
 
-    public RecycleViewCollectionFragment() {
+    public RecyclerViewProfileFragment() {
         // Required empty public constructor
     }
 
@@ -35,8 +37,8 @@ public class RecycleViewCollectionFragment extends Fragment {
                              Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView: created");
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_feed, container, false);
-        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.feed_recycler_view);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        RecyclerView mRecyclerView = (RecyclerView) view.findViewById(R.id.profile_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mUsers = UserDatabase.get(getContext()).getUsers();
@@ -44,7 +46,7 @@ public class RecycleViewCollectionFragment extends Fragment {
         // Recycler View of All Users in Database
         CollectionAdapter adapter = new CollectionAdapter(
                 mUsers,
-                RecycleViewCollectionFragment.this);
+                RecyclerViewProfileFragment.this);
 
         // Attach adapter
         mRecyclerView.setAdapter(adapter);
@@ -52,5 +54,4 @@ public class RecycleViewCollectionFragment extends Fragment {
         // Return View
         return view;
     }
-
 }
