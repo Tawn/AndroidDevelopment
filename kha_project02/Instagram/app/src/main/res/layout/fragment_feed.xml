@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="assignment07.csc214.instagram.feed.FeedFragment"
+    android:orientation="vertical">
+    <!-- TODO: Update blank fragment layout -->
+
+    <include layout="@layout/custom_toolbar"
+        android:id="@+id/feed_top_toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/feed_recycler_view">
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:text="+"
+        android:textSize="30sp"
+        android:background="#00000000"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:onClick="cameraButtonPress"/>
+
+</LinearLayout>

@@ -94,7 +94,7 @@ public class Collection {
     }
 
     public List<Pokemon> getCollection() {
-        List<Pokemon> list = new ArrayList<>(5);
+        List<Pokemon> list = new ArrayList<>();
         list.addAll(collection.values());
         return list;
     }

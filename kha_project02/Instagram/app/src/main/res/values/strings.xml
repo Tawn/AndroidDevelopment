@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Instagram</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone_number_username_or_email">Phone number, username or email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_your_login_details_welp">Forgot your login details? Welp...</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="ellipse">...</string>
+    <string name="sign_in">Sign In.</string>
+    <string name="sign_up_to_see_photos_from_your_friends">Sign up to see photos from your friends.</string>
+    <string name="username">Username</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
