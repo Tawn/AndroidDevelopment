@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyInstagram</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_your_login_details_welp">Forgot your login details? Welp...</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up.</string>
+    <string name="friends">Sign up to see photos from your friends.</string>
+    <string name="already">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="ellipse">...</string>
+</resources>

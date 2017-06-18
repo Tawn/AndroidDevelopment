@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#adf"
+    tools:context="project02.csc214.myinstagram.profile.ProfileFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <include layout="@layout/custom_toolbar"
+        android:id="@+id/profile_top_toolbar"/>
+
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <Button
+        android:text="Profile Test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="profileButtonPress"/>
+
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    
+    <include layout="@layout/custom_toolbar"
+        android:id="@+id/profile_bottom_toolbar"/>
+
+</LinearLayout>

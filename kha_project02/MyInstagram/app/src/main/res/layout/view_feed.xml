@@ -1,0 +1,68 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="project02.csc214.myinstagram.feed.FeedFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/feed_friend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_toRightOf="@+id/feed_friend"
+            android:text="default_friend"
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+
+        <Button
+            android:text="@string/ellipse"
+            android:textSize="30sp"
+            android:paddingEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="right"
+            android:background="#00000000"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/feed_image"
+        android:scaleType="fitXY"
+        android:background="#adf"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7" />
+
+    <Button
+        android:text="heart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:background="#00000000"/>
+
+    <TextView
+        android:background="#dcdcdc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</LinearLayout>
