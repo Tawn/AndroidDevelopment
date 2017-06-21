@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
             String user = data.getExtras().getString(MainActivity.USER_KEY);
             Intent intent = new Intent();
             intent.putExtra(MainActivity.USER_KEY, user);
-            setResult(Activity.RESULT_CANCELED, intent);
+            setResult(Activity.RESULT_OK, intent);
             finish();
         }
     }

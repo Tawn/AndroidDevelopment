@@ -15,6 +15,7 @@ public class Schema {
             public static final String USERNAME = "username";
             public static final String FIRSTNAME = "first_name";
             public static final String LASTNAME = "last_name";
+            public static final String PHOTOPATH = "photo_path";
             public static final String PASSWORD = "password";
             public static final String ID = "user_id";
         }

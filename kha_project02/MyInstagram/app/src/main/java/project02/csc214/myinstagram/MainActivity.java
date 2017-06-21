@@ -27,13 +27,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        Log.i(TAG, "onActivityResult: User: " + data.getExtras().getString(USER_KEY));
-        CURRENT_USER = data.getExtras().getString(USER_KEY);
+        if(resultCode == RESULT_OK) {
+            Log.i(TAG, "onActivityResult: User: " + data.getExtras().getString(USER_KEY));
+            CURRENT_USER = data.getExtras().getString(USER_KEY);
             Bundle bundle = data.getExtras();
             mCurrentUser = bundle.getString(USER_KEY);
             Intent intent = new Intent(this, PagerActivity.class);
             intent.putExtra(USER_KEY, mCurrentUser);
-            startActivity(intent);
+            startActivityForResult(intent, 4);
+        } else {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivityForResult(intent, 1);
+        }
     }
 }

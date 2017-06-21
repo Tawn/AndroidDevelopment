@@ -1,5 +1,6 @@
 package project02.csc214.myinstagram.model;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -11,20 +12,34 @@ public class User {
     private String mUsername;
     private String mPassword;
     private String mFirstname;
+    private String mLastname;
+    private String mPhotoPath;
+    private UUID mID;
+
+    public User() {
+        mID = UUID.randomUUID();
+        mPhotoPath = "abc";
+    }
+
+
+    public String toString() {
+        return "@ " + mUsername + "\n"
+                + mFirstname + " " + mLastname;
+    }
+
+    public String getPhotoPath() {
+        return mPhotoPath;
+    }
+
+    public void setPhotoPath(String path) { mPhotoPath = path; }
+
 
     public String getLastname() {
         return mLastname;
     }
 
     public void setLastname(String lastname) {
-        this.mLastname = lastname;
-    }
-
-    private String mLastname;
-    private UUID mID;
-
-    public User() {
-        mID = UUID.randomUUID();
+        mLastname = lastname;
     }
 
     public String getFirstname() { return mFirstname; }
@@ -47,10 +62,6 @@ public class User {
 
     public void setID(UUID id) {
         mID = id;
-    }
-
-    public String toString() {
-        return mUsername;
     }
 
     public String getPassword() {

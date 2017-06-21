@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.CursorWrapper;
 import android.util.Log;
 
+import java.util.List;
 import java.util.UUID;
 
 import project02.csc214.myinstagram.model.User;
@@ -25,6 +26,7 @@ public class UserCursorWrapper extends CursorWrapper {
         String username = getString(getColumnIndex(Schema.UserTable.Cols.USERNAME));
         String first = getString(getColumnIndex(Schema.UserTable.Cols.FIRSTNAME));
         String last = getString(getColumnIndex(Schema.UserTable.Cols.LASTNAME));
+        String photo = getString(getColumnIndex(Schema.UserTable.Cols.PHOTOPATH));
         String password = getString(getColumnIndex(Schema.UserTable.Cols.PASSWORD));
 
         User user = new User();
@@ -32,6 +34,7 @@ public class UserCursorWrapper extends CursorWrapper {
         user.setUsername(username);
         user.setFirstname(first);
         user.setLastname(last);
+        user.setPhotoPath(photo);
         user.setPassword(password);
         return user;
     }

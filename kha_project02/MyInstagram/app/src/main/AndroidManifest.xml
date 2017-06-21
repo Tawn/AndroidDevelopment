@@ -3,6 +3,7 @@
     package="project02.csc214.myinstagram">
 
     <uses-feature android:name="android.hardware.camera2" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -24,11 +25,12 @@
         </activity>
         <activity
             android:name=".login.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".signup.SignupActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".PagerActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".PagerActivity" />
+        <activity android:name=".userlistview.UserLookupActivity"></activity>
     </application>
 
 </manifest>

@@ -65,6 +65,7 @@ public class ListViewCollectionFragment extends Fragment {
                         dialog.setTargetFragment(ListViewCollectionFragment.this, 2);
                         dialog.show(getFragmentManager(), "Test");
 
+
             }
         });
         getActivity().setTitle(R.string.catchem);

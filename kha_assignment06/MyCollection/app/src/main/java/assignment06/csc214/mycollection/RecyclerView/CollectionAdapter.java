@@ -11,9 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import assignment06.csc214.mycollection.DialogListViewFragment;
-import assignment06.csc214.mycollection.ListViewCollectionFragment;
 import assignment06.csc214.mycollection.ViewPagerActivity;
-import assignment06.csc214.mycollection.model.Collection;
 import assignment06.csc214.mycollection.model.Pokemon;
 import assignment06.csc214.mycollection.R;
 

@@ -62,6 +62,8 @@ public class DialogListViewFragment extends DialogFragment {
         tvHP.setText(hp);
         tvDesc.setText(desc);
         return new AlertDialog.Builder(getActivity())
+                .setNegativeButton("nah", null)
+                .setNeutralButton("cancel", null)
                 .setView(view)
                 .setTitle(R.string.des)
                 .setPositiveButton("done",

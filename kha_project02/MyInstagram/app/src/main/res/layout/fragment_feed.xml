@@ -17,14 +17,42 @@
         android:id="@+id/feed_recycler_view">
     </android.support.v7.widget.RecyclerView>
 
-    <Button
-        android:text="+"
-        android:textSize="30sp"
-        android:background="#00000000"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_gravity="center"
-        android:onClick="cameraButtonPress"/>
+        android:gravity="center">
+
+        <ImageButton
+            android:src="@drawable/search"
+            android:scaleType="fitXY"
+            android:textSize="30sp"
+            android:background="#00000000"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="userSearchButtonpress"/>
+
+
+
+        <Button
+            android:text="+"
+            android:textSize="30sp"
+            android:background="#00000000"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:onClick="cameraButtonPress"/>
+
+
+        <Button
+            android:text="@string/logout"
+            android:textSize="14sp"
+            android:background="#00000000"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="ellipseClick" />
+    </LinearLayout>
 
 </LinearLayout>

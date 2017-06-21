@@ -24,36 +24,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.i(TAG, "onCreate: Tables Created");
 
         db.execSQL("create table " + Schema.UserTable.NAME
-                + "(_id integer primary key autoincrement, "
+                + "(_id integer primary key, "
                 + Schema.UserTable.Cols.USERNAME + ", "
                 + Schema.UserTable.Cols.FIRSTNAME + ", "
                 + Schema.UserTable.Cols.LASTNAME + ", "
+                + Schema.UserTable.Cols.PHOTOPATH + ", "
                 + Schema.UserTable.Cols.PASSWORD + ", "
                 + Schema.UserTable.Cols.ID + ")");
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    }
-
-    public void queryData(String sql) {
-        SQLiteDatabase db = getWritableDatabase();
-        db.execSQL(sql);
-    }
-
-    public void insertData(String name, byte[] image) {
-        SQLiteDatabase db = getWritableDatabase();
-        String sql = "INSERT INTO USER IMAGE (NULL, ?, ?, ?)";
-        SQLiteStatement statement = db.compileStatement(sql);
-        statement.bindString(1, name);
-        statement.bindBlob(2, image);
-        statement.executeInsert();
-    }
-
-    public Cursor getData(String sql) {
-        SQLiteDatabase db = getReadableDatabase();
-        return db.rawQuery(sql, null);
     }
 }

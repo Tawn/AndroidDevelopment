@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -97,6 +98,7 @@ public class UserDatabase {
                 values,
                 Schema.UserTable.Cols.ID + "=?",
                 new String[]{id});
+        Log.i("Update", "updateUser: " + user.getUsername() + " " + user.getPhotoPath());
     }
 
     public Map<String, String> getUserMap() {
@@ -113,6 +115,7 @@ public class UserDatabase {
         values.put(Schema.UserTable.Cols.USERNAME, user.getUsername());
         values.put(Schema.UserTable.Cols.FIRSTNAME, user.getFirstname());
         values.put(Schema.UserTable.Cols.LASTNAME, user.getLastname());
+        values.put(Schema.UserTable.Cols.PHOTOPATH, user.getPhotoPath());
         values.put(Schema.UserTable.Cols.PASSWORD, user.getPassword());
 
         return values;
