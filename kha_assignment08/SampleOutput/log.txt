@@ -1,0 +1,68 @@
+06-24 18:26:11.681 5189-5189/? I/art: Not late-enabling -Xcheck:jni (already on)
+06-24 18:26:11.681 5189-5189/? W/art: Unexpected CPU variant for X86 using defaults: x86
+06-24 18:26:11.831 5189-5189/assignment08.csc214.mytracks W/System: ClassLoader referenced unknown path: /data/app/assignment08.csc214.mytracks-2/lib/x86
+06-24 18:26:11.846 5189-5189/assignment08.csc214.mytracks I/InstantRun: starting instant run server: is main process
+06-24 18:26:11.980 5189-5189/assignment08.csc214.mytracks W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+06-24 18:26:12.148 5189-5189/assignment08.csc214.mytracks I/Main Activity: onCreate: invoked
+06-24 18:26:12.148 5189-5189/assignment08.csc214.mytracks I/Main Activity: onCreate: Fragment created
+06-24 18:26:12.198 5189-5218/assignment08.csc214.mytracks E/WVMExtractor: Failed to open libwvm.so: dlopen failed: library "libwvm.so" not found
+06-24 18:26:12.222 5189-5219/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:12.484 5189-5230/assignment08.csc214.mytracks I/OpenGLRenderer: Initialized EGL, version 1.4
+06-24 18:26:12.485 5189-5230/assignment08.csc214.mytracks W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+06-24 18:26:12.508 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.515 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.519 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.522 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.523 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.524 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.525 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.527 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:12.654 5189-5189/assignment08.csc214.mytracks W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+06-24 18:26:12.763 5189-5234/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:13.196 5189-5247/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:13.404 5189-5254/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:13.632 5189-5261/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:13.819 5189-5264/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.011 5189-5273/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.192 5189-5278/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.391 5189-5283/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.598 5189-5294/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.784 5189-5297/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:14.955 5189-5300/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:15.116 5189-5311/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:15.307 5189-5314/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:15.479 5189-5317/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:15.689 5189-5328/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:15.886 5189-5331/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:16.062 5189-5334/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:16.283 5189-5345/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:16.490 5189-5348/assignment08.csc214.mytracks I/OMXClient: MuxOMX ctor
+06-24 18:26:24.239 5189-5189/assignment08.csc214.mytracks I/Main Activity: onSaveInstanceState: saving message
+06-24 18:26:24.268 5189-5189/assignment08.csc214.mytracks I/Main Activity: onCreate: invoked
+06-24 18:26:24.271 5189-5189/assignment08.csc214.mytracks I/Main Activity: onRestoreInstanceState: restoring message
+06-24 18:26:24.278 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.280 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.281 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.282 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.283 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.284 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:24.334 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:26.433 5189-5189/assignment08.csc214.mytracks W/AudioTrack: AUDIO_OUTPUT_FLAG_FAST denied by client; transfer 4, track 48000 Hz, output 44100 Hz
+06-24 18:26:26.444 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onClick: Sound message listener invoked
+06-24 18:26:26.444 5189-5189/assignment08.csc214.mytracks I/Main Activity: soundChange: Sound listener invoked
+06-24 18:26:31.786 5189-5189/assignment08.csc214.mytracks I/Main Activity: onSaveInstanceState: saving message
+06-24 18:26:31.809 5189-5189/assignment08.csc214.mytracks I/Main Activity: onCreate: invoked
+06-24 18:26:31.810 5189-5189/assignment08.csc214.mytracks I/Main Activity: onRestoreInstanceState: restoring message
+06-24 18:26:31.867 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.868 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.869 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.872 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.874 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.875 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.877 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:31.878 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onBindViewHolder: Bidning views
+06-24 18:26:33.487 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onClick: Sound message listener invoked
+06-24 18:26:33.487 5189-5189/assignment08.csc214.mytracks I/Main Activity: soundChange: Sound listener invoked
+06-24 18:26:36.103 5189-5189/assignment08.csc214.mytracks W/AudioTrack: AUDIO_OUTPUT_FLAG_FAST denied by client; transfer 4, track 48000 Hz, output 44100 Hz
+06-24 18:26:36.122 5189-5189/assignment08.csc214.mytracks I/TrackFragment: onClick: Sound message listener invoked
+06-24 18:26:36.122 5189-5189/assignment08.csc214.mytracks I/Main Activity: soundChange: Sound listener invoked
