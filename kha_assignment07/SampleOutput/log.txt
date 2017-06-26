@@ -1,0 +1,49 @@
+06-24 19:41:05.001 3989-3989/? I/art: Not late-enabling -Xcheck:jni (already on)
+06-24 19:41:05.001 3989-3989/? W/art: Unexpected CPU variant for X86 using defaults: x86
+06-24 19:41:05.211 3989-3989/assignment08.csc214.mysqlite W/System: ClassLoader referenced unknown path: /data/app/assignment08.csc214.mysqlite-2/lib/x86
+06-24 19:41:05.224 3989-3989/assignment08.csc214.mysqlite I/InstantRun: starting instant run server: is main process
+06-24 19:41:05.299 3989-3989/assignment08.csc214.mysqlite W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable
+06-24 19:41:05.444 3989-3989/assignment08.csc214.mysqlite I/Main Activity: onCreate: invoked
+06-24 19:41:05.552 3989-3989/assignment08.csc214.mysqlite I/DatabaseHelper: UserDatabaseHelper: Constructor invoked
+06-24 19:41:05.650 3989-4017/assignment08.csc214.mysqlite I/OpenGLRenderer: Initialized EGL, version 1.4
+06-24 19:41:05.650 3989-4017/assignment08.csc214.mysqlite W/OpenGLRenderer: Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+06-24 19:41:05.703 3989-3989/assignment08.csc214.mysqlite W/art: Before Android 4.1, method int android.support.v7.widget.ListViewCompat.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView
+06-24 19:41:19.560 3989-3989/assignment08.csc214.mysqlite I/Main Activity: addPokemonButtonPress: adding pokemon
+06-24 19:41:19.578 3989-3989/assignment08.csc214.mysqlite I/AddPokemonActivity: onCreate: invoked
+06-24 19:41:26.124 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:26.124 3989-3989/assignment08.csc214.mysqlite I/AddPokemonActivity: addPokemonButtonPress: # of Pokemons: 1
+06-24 19:41:26.138 3989-3989/assignment08.csc214.mysqlite I/Main Activity: onActivityResult: creating new fragment
+06-24 19:41:26.140 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:26.219 3989-3989/assignment08.csc214.mysqlite W/IInputConnectionWrapper: finishComposingText on inactive InputConnection
+06-24 19:41:30.542 3989-3989/assignment08.csc214.mysqlite I/Main Activity: addPokemonButtonPress: adding pokemon
+06-24 19:41:30.560 3989-3989/assignment08.csc214.mysqlite I/AddPokemonActivity: onCreate: invoked
+06-24 19:41:36.183 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:36.183 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:36.183 3989-3989/assignment08.csc214.mysqlite I/AddPokemonActivity: addPokemonButtonPress: # of Pokemons: 2
+06-24 19:41:36.198 3989-3989/assignment08.csc214.mysqlite I/Main Activity: onActivityResult: creating new fragment
+06-24 19:41:36.202 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:36.202 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:36.282 3989-3989/assignment08.csc214.mysqlite W/IInputConnectionWrapper: finishComposingText on inactive InputConnection
+06-24 19:41:42.503 3989-3989/assignment08.csc214.mysqlite I/Main Activity: onCreate: invoked
+06-24 19:41:42.504 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.504 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.506 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.506 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.507 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.507 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.508 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:42.508 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.541 3989-3989/assignment08.csc214.mysqlite I/Main Activity: onCreate: invoked
+06-24 19:41:55.542 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.542 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.543 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.543 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.544 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.544 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.545 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.546 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.547 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.547 3989-3989/assignment08.csc214.mysqlite I/UserCursorWrapper: getPokemon: Getting Pokemon
+06-24 19:41:55.619 3989-3992/assignment08.csc214.mysqlite I/art: Do partial code cache collection, code=26KB, data=30KB
+06-24 19:41:55.620 3989-3992/assignment08.csc214.mysqlite I/art: After code cache collection, code=26KB, data=30KB
+06-24 19:41:55.620 3989-3992/assignment08.csc214.mysqlite I/art: Increasing code cache capacity to 128KB

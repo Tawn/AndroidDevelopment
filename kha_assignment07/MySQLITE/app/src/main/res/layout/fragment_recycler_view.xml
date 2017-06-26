@@ -1,9 +1,0 @@
-<android.support.v7.widget.RecyclerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main_recyclerview"
-    android:background="#0DF"
-    tools:context="assignment07.csc214.mysqlite.RecyclerView.RecyclerViewFragment">
-</android.support.v7.widget.RecyclerView>
