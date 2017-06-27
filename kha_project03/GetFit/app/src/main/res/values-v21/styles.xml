@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Button Styles-->
+    <style name="StartButton">
+        <item name="android:textColor">#000</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/start_button</item>
+    </style>
+</resources>

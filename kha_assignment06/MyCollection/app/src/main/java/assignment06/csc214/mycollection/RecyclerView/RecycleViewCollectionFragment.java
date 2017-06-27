@@ -25,7 +25,6 @@ import assignment06.csc214.mycollection.model.Pokemon;
 public class RecycleViewCollectionFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
-
     private List<Pokemon> mPokemonColleciton;
     public static final String ARG_ID = "Pokemon ID";
 
