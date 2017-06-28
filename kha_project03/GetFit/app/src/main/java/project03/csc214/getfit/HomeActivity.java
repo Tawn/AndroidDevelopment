@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.util.List;
+
+import project03.csc214.getfit.database.Database;
+import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.pager.PagerAdapter;
 import project03.csc214.getfit.workout.CreateRoutineActivity;
 

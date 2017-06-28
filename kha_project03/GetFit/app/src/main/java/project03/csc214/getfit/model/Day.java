@@ -40,8 +40,12 @@ public class Day {
             case 5: return "Thursday";
             case 6: return "Friday";
             case 7: return "Saturday";
-            default: return " ";
+            default: return "None";
         }
+    }
+
+    public int getDayNumber() {
+        return mDay;
     }
 
     public void setDay(int day) {
