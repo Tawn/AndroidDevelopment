@@ -9,7 +9,6 @@ import android.view.View;
 
 import java.util.List;
 
-import project03.csc214.getfit.database.Database;
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.pager.PagerAdapter;
 import project03.csc214.getfit.workout.CreateRoutineActivity;
@@ -22,6 +21,8 @@ public class HomeActivity extends AppCompatActivity {
     public static final String TAG = "Home";
     private ViewPager mPager;
     private PagerAdapter mAdapter;
+    private List<Day> mDays;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,4 +42,12 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void settingButtonPress(View view) {
+        Log.i(TAG, "settingButtonPress: ");
+        mPager.setCurrentItem(2);
+    }
+
+    public void scheduleButtonPress(View view) {
+        mPager.setCurrentItem(0);
+    }
 }

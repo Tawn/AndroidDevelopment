@@ -8,4 +8,14 @@
     <string name="start">Start</string>
     <string name="day">Day:</string>
     <string name="routine">Routine</string>
+    <string name="enter_today_s_workout">Enter today\'s workout</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="set_workout">set workout</string>
+    <string name="_0">0</string>
+    <string name="finish">Finish</string>
+    <string name="schedule">Schedule</string>
+    <string name="workout">Workout</string>
+    <string name="reps">Reps</string>
+    <string name="weight">Weight</string>
 </resources>

@@ -10,6 +10,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
+
+import project03.csc214.getfit.database.Database;
+import project03.csc214.getfit.model.Day;
+import project03.csc214.getfit.model.WeekProgress;
 
 
 /**
@@ -18,6 +24,8 @@ import java.util.Calendar;
 public class HomeFragment extends Fragment {
 
     private TextView tvDay;
+    private TextView tvRoutine;
+    private Map<Integer, Day> mDays;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -32,29 +40,23 @@ public class HomeFragment extends Fragment {
 
         // Calender day
         tvDay = (TextView)view.findViewById(R.id.day_of_week);
+        tvRoutine = (TextView)view.findViewById(R.id.home_routine);
         setDay();
         return view;
     }
 
     public void setDay() {
+        // Updated schedule
+        List<Day> dbDays = Database.get(getContext()).getDays();
+        WeekProgress progress = new WeekProgress();
+        mDays = progress.update(dbDays);
+
+
+        // Update TextView
         Calendar c = Calendar.getInstance();
         int day = c.get(Calendar.DAY_OF_WEEK);
-        switch(day) {
-            case 1: tvDay.setText("Sunday");
-                break;
-            case 2: tvDay.setText("Monday");
-                break;
-            case 3: tvDay.setText("Tuesday");
-                break;
-            case 4: tvDay.setText("Wednesday");
-                break;
-            case 5: tvDay.setText("Thursday");
-                break;
-            case 6: tvDay.setText("Friday");
-                break;
-            case 7: tvDay.setText("Saturday");
-                break;
-        }
+        tvDay.setText(mDays.get(day).getDay());
+        tvRoutine.setText(mDays.get(day).getRoutine());
     }
 
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import project03.csc214.getfit.database.Database;
+
 /**
  * Created by Tkha on 6/27/17.
  */
@@ -39,6 +41,16 @@ public class WeekProgress {
         mProgress.put(5, thur);
         mProgress.put(6, fri);
         mProgress.put(7, sat);
+
+    }
+
+    public Map<Integer, Day> update(List<Day> dbDays) {
+        for(int i = 0; i < dbDays.size(); i++) {
+            Day d = dbDays.get(i);
+            mProgress.put(d.getDayNumber(), d);
+        }
+        return mProgress;
+
     }
 
     public List<Day> getDays() {

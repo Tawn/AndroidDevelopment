@@ -13,20 +13,20 @@ public class Day {
 
     public Day() {
         mDay = 1;
-        mRoutine = "No Progress Made";
+        mRoutine = "No Scheduled Workout";
         mWeight = 0;
         mReps = 0;
     }
 
     public String toString() {
         switch(mDay) {
-            case 1: return "Sunday:     " + "Workout Routine";
-            case 2: return "Monday:     " + "Workout Routine";
-            case 3: return "Tuesday:    " + "Workout Routine";
-            case 4: return "Wednesday:  " + "Workout Routine";
-            case 5: return "Thursday:   " + "Workout Routine";
-            case 6: return "Friday:     " + "Workout Routine";
-            case 7: return "Saturday:   " + "Workout Routine";
+            case 1: return "Sunday:     " + mRoutine;
+            case 2: return "Monday:     " + mRoutine;
+            case 3: return "Tuesday:    " + mRoutine;
+            case 4: return "Wednesday:  " + mRoutine;
+            case 5: return "Thursday:   " + mRoutine;
+            case 6: return "Friday:     " + mRoutine;
+            case 7: return "Saturday:   " + mRoutine;
             default: return " ";
         }
     }
