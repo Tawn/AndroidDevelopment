@@ -11,11 +11,15 @@
     <string name="enter_today_s_workout">Enter today\'s workout</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
-    <string name="set_workout">set workout</string>
+    <string name="set_workout">workout</string>
     <string name="_0">0</string>
     <string name="finish">Finish</string>
     <string name="schedule">Schedule</string>
     <string name="workout">Workout</string>
     <string name="reps">Reps</string>
     <string name="weight">Weight</string>
+    <string name="sets">Sets</string>
+    <string name="lbs">lbs</string>
+    <string name="_back">Return</string>
+    <string name="pic">Take Picture</string>
 </resources>

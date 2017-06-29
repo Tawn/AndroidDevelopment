@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import project03.csc214.getfit.HomeActivity;
 import project03.csc214.getfit.R;
@@ -26,12 +27,15 @@ public class WorkoutActivity extends AppCompatActivity {
         manager.beginTransaction()
                 .add(R.id.workout_frame, fragment)
                 .commit();
+        Toast.makeText(getApplicationContext(), "Workout Saved", Toast.LENGTH_SHORT).show();
 
     }
 
     // No args passed
     // Set database
     public void finishButtonPress(View view) {
+
+
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }

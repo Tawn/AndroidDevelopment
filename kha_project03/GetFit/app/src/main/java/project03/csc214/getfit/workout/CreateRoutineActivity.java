@@ -48,7 +48,7 @@ public class CreateRoutineActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WorkoutActivity.class);
         if(d.getRoutine().equals("No Scheduled Workout")) {
             Log.i(TAG, "onCreate: No Schedule: " + d.getRoutine() + dbDays.size());
-            startActivity(intent);
+
             
         } else {
             Log.i(TAG, "onCreate: Schedule Exists: " + d.getRoutine());

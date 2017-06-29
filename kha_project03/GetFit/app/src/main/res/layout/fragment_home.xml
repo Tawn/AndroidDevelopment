@@ -50,7 +50,7 @@
             style="@style/StartButton"
             android:text="Extras"
             android:textAllCaps="false"
-
+            android:onClick="extraButtonPress"
             />
 
         <Button

@@ -9,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import project03.csc214.getfit.R;
+import project03.csc214.getfit.database.Database;
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.model.WeekProgress;
 
@@ -20,7 +23,7 @@ public class ScheduleFragment extends Fragment {
 
     private RecyclerView mView;
     private RecyclerAdapter adapter;
-    private List<Day> mDays;
+    private Map<Integer, Day> mDays;
     private WeekProgress mProgress;
 
     public ScheduleFragment() {
@@ -32,11 +35,20 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        // Updated schedule
+        List<Day> dbDays = Database.get(getContext()).getDays();
+        WeekProgress progress = new WeekProgress();
+        mDays = progress.update(dbDays);
+
+        // Set View
         mView = (RecyclerView)view.findViewById(R.id.schedule);
         mView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mProgress = new WeekProgress();
-        mDays = mProgress.getDays();
-        adapter = new RecyclerAdapter(mDays, ScheduleFragment.this);
+
+        List<Day> d = new ArrayList<>();
+        d.addAll(mDays.values());
+
+        adapter = new RecyclerAdapter(d, ScheduleFragment.this);
         mView.setAdapter(adapter);
         return view;
     }

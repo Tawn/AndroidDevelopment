@@ -6,9 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
+import project03.csc214.getfit.database.Database;
+import project03.csc214.getfit.extra.ExtraActivity;
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.pager.PagerAdapter;
 import project03.csc214.getfit.workout.CreateRoutineActivity;
@@ -33,7 +36,6 @@ public class HomeActivity extends AppCompatActivity {
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
         mPager.setCurrentItem(1);
-
     }
 
     public void startButtonPress(View view) {
@@ -49,5 +51,10 @@ public class HomeActivity extends AppCompatActivity {
 
     public void scheduleButtonPress(View view) {
         mPager.setCurrentItem(0);
+    }
+
+    public void extraButtonPress(View view) {
+        Intent intent = new Intent(this, ExtraActivity.class);
+        startActivity(intent);
     }
 }

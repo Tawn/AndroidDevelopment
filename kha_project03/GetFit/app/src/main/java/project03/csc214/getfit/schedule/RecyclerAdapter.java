@@ -11,7 +11,6 @@ import java.util.List;
 
 import project03.csc214.getfit.R;
 import project03.csc214.getfit.model.Day;
-import project03.csc214.getfit.model.WeekProgress;
 
 /**
  * Created by Tkha on 6/27/17.

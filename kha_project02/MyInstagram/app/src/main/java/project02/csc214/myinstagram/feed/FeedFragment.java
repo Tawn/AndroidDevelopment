@@ -56,6 +56,7 @@ public class FeedFragment extends Fragment {
             String path = mCurrentUser.getPhotoPath();
             try {
                 File file = new File(path, "profile.jpg");
+                Log.i("photo", "path: " + file.toString());
                 Bitmap b = BitmapFactory.decodeStream(new FileInputStream(file));
                 ImageView img=(ImageView)view.findViewById(R.id.feed_image);
                 img.setImageBitmap(b);
