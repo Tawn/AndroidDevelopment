@@ -97,8 +97,6 @@ public class ExtraActivity extends AppCompatActivity {
 
     public void imgButtonPress(View view) {
         String imgUrl = "http://www.csug.rochester.edu/URWIC/images/rochester.png";
-        TextView tvTxt = (TextView)findViewById(R.id.extra_txt);
-        tvTxt.setText(" ");
         new AsyncDownload((ImageView) findViewById(R.id.extra_img), getApplicationContext()).execute(imgUrl);
     }
 }
