@@ -23,29 +23,58 @@
         android:layout_height="0dp"
         android:layout_weight="8"/>
 
-    <Button
-        android:text="@string/camera"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="cameraButtonPress"
-        style="@style/CustomButtonStyle"/>
+        android:layout_weight="2">
 
-    <Button
-        android:text="@string/sound_pool"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="soundPoolButtonPress"
-        style="@style/CustomButtonStyle"/>
+        <ImageButton
+            android:id="@+id/extra_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="imgButtonPress"
+            style="@style/CustomButtonStyle"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:id="@+id/extra_txt"
+            android:text="@string/network_url"
+            android:textColor="#FFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+    </RelativeLayout>
 
-    <Button
-        android:text="@string/music_player"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:onClick="musicPlayerButtonPress"
-        style="@style/CustomButtonStyle"/>
+        android:orientation="horizontal">
+
+        <Button
+            android:text="@string/camera"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="cameraButtonPress"
+            style="@style/CustomButtonStyle"/>
+
+        <Button
+            android:text="@string/sound_pool"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="soundPoolButtonPress"
+            style="@style/CustomButtonStyle"/>
+
+        <Button
+            android:text="@string/music_player"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="musicPlayerButtonPress"
+            style="@style/CustomButtonStyle"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

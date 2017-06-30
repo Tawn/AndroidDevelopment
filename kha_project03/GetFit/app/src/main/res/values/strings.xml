@@ -32,4 +32,6 @@
     <string name="sound_pool">Sound Pool</string>
     <string name="music_player">Music Player</string>
     <string name="no_workout_scheduled">No workout scheduled</string>
+    <string name="url_image">URL IMAGE</string>
+    <string name="network_url">Network URL</string>
 </resources>

@@ -23,8 +23,12 @@
 
     <uses-permission android:name="project03.csc214.getfit.permission.MAPS_RECEIVE" />
 
-    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
@@ -35,6 +39,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <provider
+            android:name=".extra.GenericFIleProvide"
+            android:authorities="${applicationId}.my.package.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
         <activity android:name=".HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
