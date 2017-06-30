@@ -8,14 +8,13 @@ public class Day {
 
     private int mDay;
     private String mRoutine;
-    private double mWeight;
-    private int mReps;
+    private String mNote;
+
 
     public Day() {
         mDay = 1;
         mRoutine = "No Scheduled Workout";
-        mWeight = 0;
-        mReps = 0;
+        mNote = "No Note Recorded";
     }
 
     public String toString() {
@@ -60,20 +59,11 @@ public class Day {
         this.mRoutine = routine;
     }
 
-    public double getWeight() {
-        return mWeight;
+    public String getNote() {
+        return mNote;
     }
 
-    public void setWeight(double weight) {
-        this.mWeight = weight;
+    public void setNote(String note) {
+        this.mNote = note;
     }
-
-    public int getReps() {
-        return mReps;
-    }
-
-    public void setReps(int reps) {
-        this.mReps = reps;
-    }
-
 }

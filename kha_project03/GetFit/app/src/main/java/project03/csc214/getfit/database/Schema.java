@@ -14,22 +14,10 @@ public class Schema {
         public static final class Cols {
             public static final String DAY = "day";
             public static final String ROUTINE = "routine";
+            public static final String NOTE = "note";
 
         }
 
     }
-
-    public static class DayTable {
-
-        public static final String NAME = "routines";
-
-        public static final class Cols {
-            public static final String ROUTINE = "routine";
-            public static final String WORKOUT = "workout";
-
-        }
-    }
-
-
 
 }

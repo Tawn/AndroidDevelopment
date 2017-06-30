@@ -8,10 +8,16 @@ import android.view.View;
 
 import mobappdev.demo.finalexam.R;
 
-public class ProblemTwoActivity extends AppCompatActivity {
+public class ProblemTwoActivity extends AppCompatActivity implements ProblemTwoTopFragment.TopMessageListener, ProblemTwoBottomFragment.BotMessageListener {
+
+    public static final String TAG = "P2Activity";
+    public static final String TOP_MESSAGE_KEY = "message_to_bot";
+    public static final String BOT_MESSAGE_KEY = "convert_top_message";
+
 
     private ProblemTwoTopFragment topFragment;
     private ProblemTwoBottomFragment botFragment;
+    private FragmentManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +28,50 @@ public class ProblemTwoActivity extends AppCompatActivity {
         topFragment = new ProblemTwoTopFragment();
         botFragment = new ProblemTwoBottomFragment();
 
+        // Bundle at initial
+        Bundle bundle = new Bundle();
+        bundle.putString(BOT_MESSAGE_KEY, "first");
+        topFragment = new ProblemTwoTopFragment();
+        topFragment.setArguments(bundle);
+
         // Start manager
-        FragmentManager manager = getSupportFragmentManager();
+        manager = getSupportFragmentManager();
         manager.beginTransaction()
                 .add(R.id.fl_top, topFragment)
-                .add(R.id.fl_bottom, botFragment)
                 .commit();
     }
 
-    public void sendBeloButtonpress(View view) {
-        Log.i("test", "sendBeloButtonpress: test");
+    @Override
+    public void messageSentDown(CharSequence message) {
+        Log.i(TAG, "messageSentDown: " + message);
+
+        // Add arguments to bottom fragment
+        Bundle bundle = new Bundle();
+        bundle.putString(TOP_MESSAGE_KEY, message.toString());
+        botFragment = new ProblemTwoBottomFragment();
+        botFragment.setArguments(bundle);
+
+        // Inflate bottom fragment
+        manager.beginTransaction()
+                .add(R.id.fl_bottom, botFragment)
+                .commit();
+
+    }
+
+    @Override
+    public void messageConvert(CharSequence message) {
+        Log.i(TAG, "messageConvert: " + message);
+
+        // Add arguments to top fragment
+        Bundle bundle = new Bundle();
+        bundle.putString(BOT_MESSAGE_KEY, message.toString());
+        topFragment = new ProblemTwoTopFragment();
+        topFragment.setArguments(bundle);
+
+        // Inflate top fragment
+        manager.beginTransaction()
+                .add(R.id.fl_top, topFragment)
+                .commit();
 
     }
 }

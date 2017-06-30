@@ -7,19 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import mobappdev.demo.finalexam.R;
 
 public class ImageDownloaderActivity extends AppCompatActivity {
     private static final String TAG = "ImgDler";
+    private ImageView ivImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_downloader);
+        ivImage = (ImageView)findViewById(R.id.iv_image);
     }
 
     public void downloadPressed(View view) {
+        String imgUrl = "https://vetstreet.brightspotcdn.com/dims4/default/8293303/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F0e%2F9f%2F74334f874e899e8e8a6a33752c91%2Fbasset-hound-AP-0T0WDB-645sm12913.jpg";
+        new AsyncDownload((ImageView) findViewById(R.id.iv_image), getApplicationContext()).execute(imgUrl);
+        ivImage.buildDrawingCache();
+        Bitmap bmImage = ivImage.getDrawingCache();
+        ivImage.setImageBitmap(bmImage);
     }
 
 
@@ -60,4 +68,6 @@ public class ImageDownloaderActivity extends AppCompatActivity {
         //return BitmapFactory.decodeFile(path, scaledOptions);
         return BitmapFactory.decodeFile(path);
     }
+
+
 }

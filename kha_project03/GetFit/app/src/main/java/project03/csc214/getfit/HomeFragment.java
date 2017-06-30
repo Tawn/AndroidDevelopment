@@ -17,6 +17,7 @@ import java.util.Map;
 import project03.csc214.getfit.database.Database;
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.model.WeekProgress;
+import project03.csc214.getfit.setting.SettingsFragment;
 
 
 /**
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment {
         int day = c.get(Calendar.DAY_OF_WEEK);
         tvDay.setText(mDays.get(day).getDay());
         tvRoutine.setText(mDays.get(day).getRoutine());
-    }
 
+        Log.i("TestFrag", "setDay: "  + mDays.get(day).getNote());
+    }
 }

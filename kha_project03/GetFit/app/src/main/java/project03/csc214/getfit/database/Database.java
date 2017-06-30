@@ -4,12 +4,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.model.Routine;
+import project03.csc214.getfit.model.Workout;
 
 /**
  * Created by Tkha on 6/27/17.
@@ -21,14 +23,14 @@ public class Database {
     private final Context mContext;
     private final SQLiteDatabase mDatabase;
 
+    // Days
     private final List<Day> mDays; // Contains list of Routines
-    private final List<Routine> mRoutines; // Contains list of workouts
 
     public Database(Context context) {
         mContext = context.getApplicationContext();
         mDatabase = new DatabaseHelper(mContext).getWritableDatabase();
         mDays = new ArrayList<>();
-        mRoutines = new ArrayList<>();
+
     }
 
     public static synchronized Database get(Context context) {
@@ -38,6 +40,7 @@ public class Database {
         return sProgressDatabase;
     }
 
+    // (DAY) GET ALL DAYS IN 1 WEEK
     public List<Day> getDays() {
         mDays.clear();
         DatabaseCursorWrapper wrapper = queryUser(null, null);
@@ -81,6 +84,7 @@ public class Database {
         ContentValues values = new ContentValues();
         values.put(Schema.ProgressTable.Cols.DAY, day.getDayNumber());
         values.put(Schema.ProgressTable.Cols.ROUTINE, day.getRoutine());
+        values.put(Schema.ProgressTable.Cols.NOTE, day.getNote());
         return values;
     }
 

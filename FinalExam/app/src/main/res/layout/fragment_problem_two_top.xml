@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/et_input"
         android:text="@string/send_below"
-        android:onClick="sendBeloButtonpress"
         />
 
     <TextView

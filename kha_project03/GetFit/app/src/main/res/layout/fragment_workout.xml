@@ -15,335 +15,46 @@
         <TextView
             android:hint="@string/workout"
             android:id="@+id/tv_workout_fragment"
-            android:textSize="24sp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <TextView
-            android:hint="@string/sets"
+            android:hint="@string/_note"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+
+        <EditText
+            android:id="@+id/workout_note"
+            android:inputType="textMultiLine"
             android:textSize="24sp"
-            android:layout_width="0dp"
+            android:lines="12"
+            android:gravity="top|start"
+            android:maxLines="12"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"/>
-        <TextView
-            android:hint="@string/reps"
-            android:textSize="24sp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"/>
-        <TextView
-            android:hint="@string/lbs"
-            android:textSize="24sp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"/>
+            android:layout_width="fill_parent"
+            android:scrollbars="vertical"
+            />
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout1"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
 
-        <EditText
-            android:id="@+id/set1"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep1"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight1"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout2"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set2"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep2"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight2"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout3"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set3"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep3"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight3"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout4"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set4"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep4"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight4"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout5"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set5"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep5"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight5"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout6"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set6"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep6"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight6"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout7"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set7"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep7"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight7"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-        <EditText
-            android:id="@+id/workout8"
-            android:text="@string/set_workout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"/>
-
-        <EditText
-            android:id="@+id/set8"
-            android:text="0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/rep8"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/weight8"
-            android:text="@string/_0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"/>
-    </LinearLayout>
     <Button
         android:text="@string/finish"
+        android:id="@+id/workout_finish"
         android:textColor="#2d39e6"
         android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#00000000"
-        android:onClick="finishButtonPress"/>
+        android:background="#00000000"/>
 
 </LinearLayout>

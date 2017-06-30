@@ -5,23 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/logo"
     tools:context="project03.csc214.getfit.extra.ExtraActivity">
 
     <TextView
-        android:text="Advanced Features"
+        android:text="@string/advanced_features"
         android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+
     <Button
-        android:text="Camera"
+        android:text="@string/camera"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:onClick="cameraButtonPress"/>
+        android:onClick="cameraButtonPress"
+        style="@style/CustomButtonStyle"/>
 
+    <Button
+        android:text="@string/sound_pool"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="soundPoolButtonPress"
+        style="@style/CustomButtonStyle"/>
 
+    <Button
+        android:text="@string/music_player"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="musicPlayerButtonPress"
+        style="@style/CustomButtonStyle"/>
 
 
 </LinearLayout>

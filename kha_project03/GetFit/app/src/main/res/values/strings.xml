@@ -22,4 +22,14 @@
     <string name="lbs">lbs</string>
     <string name="_back">Return</string>
     <string name="pic">Take Picture</string>
+    <string name="_note">Notes</string>
+    <string name="set_today_s_workout">Set today\'s workout</string>
+    <string name="set_your_notes">Set your notes</string>
+    <string name="today_s_note">Today\'s Note</string>
+    <string name="save">Save</string>
+    <string name="advanced_features">Advanced Features</string>
+    <string name="camera">Camera</string>
+    <string name="sound_pool">Sound Pool</string>
+    <string name="music_player">Music Player</string>
+    <string name="no_workout_scheduled">No workout scheduled</string>
 </resources>

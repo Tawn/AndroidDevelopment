@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--Custom Colors-->
+    <color name="peach">#e18686</color>
+    <color name="blueberry">#9482dc</color>
+    <color name="light_gray">#c6c6c6</color>
+    <color name="lighter_gray">#f4f4f4</color>
+    <color name="gray">#868686</color>
+
 </resources>

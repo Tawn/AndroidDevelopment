@@ -7,6 +7,7 @@
     tools:context="project03.csc214.getfit.workout.CreateRoutineFragment">
 
     <EditText
+        android:id="@+id/routine_create"
         android:hint="@string/enter_today_s_workout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -17,6 +18,7 @@
         android:gravity="center">
         <Button
             android:text="@string/submit"
+            android:id="@+id/creat_submit"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

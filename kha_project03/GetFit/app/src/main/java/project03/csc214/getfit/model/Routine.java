@@ -13,19 +13,19 @@ public class Routine {
     private String mWorkout;
 
     public Routine() {
-        mRoutine = null;
-        mWorkout = null;
-    }
+        mRoutine = "Add routine";
+        mWorkout = "Add workout";
 
+    }
     public void setWorkout(String workout) {
         mWorkout = workout;
     }
 
-    public String getWorkouts() {
+    public String getWorkout() {
         return mWorkout;
     }
 
-    public void setRoutin(String routine) {
+    public void setRoutine(String routine) {
         mRoutine = routine;
     }
 

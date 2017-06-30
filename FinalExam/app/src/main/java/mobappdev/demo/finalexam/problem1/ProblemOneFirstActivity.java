@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import mobappdev.demo.finalexam.R;
 
-public class ProblemOneFirstActivity extends AppCompatActivity {
+public class ProblemOneFirstActivity extends LifecycleLogger {
 
     public static final String TAG = "P1FirstActivity";
     public static final String RESULT_KEY = "first_activity_result";
@@ -38,41 +38,6 @@ public class ProblemOneFirstActivity extends AppCompatActivity {
         tvSubResult = (TextView)findViewById(R.id.tv_result);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG, "onStart: first activity");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "onResume: first activity");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "onPause: first activity");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStop: first activity");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "onRestart: first activity");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "onDestroy: first activity");
-    }
 
     public void powClicked(View view) {
         // Get operand inputs

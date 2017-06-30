@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import project03.csc214.getfit.model.Day;
 import project03.csc214.getfit.model.Routine;
+import project03.csc214.getfit.model.Workout;
 
 /**
  * Created by Tkha on 6/27/17.
@@ -22,20 +23,13 @@ public class DatabaseCursorWrapper extends CursorWrapper {
     public Day getDays() {
         int day_of_week = getInt(getColumnIndex(Schema.ProgressTable.Cols.DAY));
         String routine = getString(getColumnIndex(Schema.ProgressTable.Cols.ROUTINE));
+        String note = getString(getColumnIndex(Schema.ProgressTable.Cols.NOTE));
 
         Day day = new Day();
         day.setDay(day_of_week);
         day.setRoutine(routine);
+        day.setNote(note);
         return day;
     }
 
-    public Routine getRoutine() {
-        String day_routine = getString(getColumnIndex(Schema.DayTable.Cols.ROUTINE));
-        String workout = getString(getColumnIndex(Schema.DayTable.Cols.WORKOUT));
-
-        Routine routine = new Routine();
-//        routines.setRoutine(day_routine);
-//        routines.setWorkout(workout);
-        return routine;
-    }
 }

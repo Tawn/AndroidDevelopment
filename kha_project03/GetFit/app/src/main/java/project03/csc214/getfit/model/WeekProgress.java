@@ -15,6 +15,7 @@ import project03.csc214.getfit.database.Database;
 public class WeekProgress {
 
     private Map<Integer, Day> mProgress;
+    private Map<String, Workout> mWorkouts;
 
     public WeekProgress() {
         mProgress = new HashMap<>();
@@ -41,7 +42,6 @@ public class WeekProgress {
         mProgress.put(5, thur);
         mProgress.put(6, fri);
         mProgress.put(7, sat);
-
     }
 
     public Map<Integer, Day> update(List<Day> dbDays) {
@@ -52,6 +52,7 @@ public class WeekProgress {
         return mProgress;
 
     }
+
 
     public List<Day> getDays() {
         List<Day> list = new ArrayList<>();

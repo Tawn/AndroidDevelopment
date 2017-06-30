@@ -24,7 +24,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + Schema.ProgressTable.NAME
                 + "(_id integer primary key, "
                 + Schema.ProgressTable.Cols.DAY + ", "
-                + Schema.ProgressTable.Cols.ROUTINE + ")");
+                + Schema.ProgressTable.Cols.ROUTINE + ", "
+                + Schema.ProgressTable.Cols.NOTE + ")");
     }
 
     @Override

@@ -2,10 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="project03.csc214.getfit">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:glEsVersion="0x00020000"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+     The following two permissions are not required to use
+     Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <permission
+        android:name="project03.csc214.getfit.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="project03.csc214.getfit.permission.MAPS_RECEIVE" />
+
+    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -14,18 +34,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+
+        <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".workout.WorkoutActivity" />
-        <activity android:name=".workout.CreateRoutineActivity" />
-        <activity android:name=".setting.SettingsActivity" />
-        <activity android:name=".extra.ExtraActivity" />
-        <activity android:name=".extra.CameraActivity"></activity>
+
+        <activity android:name=".workout.WorkoutActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".workout.CreateRoutineActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".extra.ExtraActivity"
+            android:parentActivityName="project03.csc214.getfit.HomeActivity">
+
+        </activity>
+            android:name="com.google.android.gms.version"
+
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBBzLjPqf9cibyZNtOtefTDolF7Fh5C9vc" />
+
     </application>
 
 </manifest>

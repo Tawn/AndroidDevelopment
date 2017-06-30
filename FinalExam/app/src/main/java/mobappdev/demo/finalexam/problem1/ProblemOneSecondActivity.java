@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 import mobappdev.demo.finalexam.MainActivity;
 import mobappdev.demo.finalexam.R;
 
-public class ProblemOneSecondActivity extends AppCompatActivity {
+public class ProblemOneSecondActivity extends LifecycleLogger {
 
     public static final String TAG = "P2SecondActivity";
     public static final String SUBTRACT_KEY = "second_activity_subtract";
@@ -48,42 +48,6 @@ public class ProblemOneSecondActivity extends AppCompatActivity {
         // Initialize EditText
         etSubOperand = (EditText)findViewById(R.id.et_subtract);
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG, "onStart: second activity");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG, "onResume: second activity");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG, "onPause: second activity");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStop: second activity");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "onRestart: second activity");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG, "onDestroy: second activity");
     }
 
     public void subtractClicked(View view) {

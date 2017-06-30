@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,9 +12,11 @@ import android.widget.Toast;
 
 import project03.csc214.getfit.HomeActivity;
 import project03.csc214.getfit.R;
+import project03.csc214.getfit.pager.DialogViewFragment;
 
-public class WorkoutActivity extends AppCompatActivity {
+public class WorkoutActivity extends AppCompatActivity implements WorkoutFragment.CompleWorkoutListener {
 
+    public static final String TAG = "Workout Activity";
     private WorkoutFragment fragment;
 
 
@@ -21,7 +24,7 @@ public class WorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
-
+        Log.i(TAG, "onCreate: Activity created");
         fragment = new WorkoutFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction()
@@ -31,12 +34,9 @@ public class WorkoutActivity extends AppCompatActivity {
 
     }
 
-    // No args passed
-    // Set database
-    public void finishButtonPress(View view) {
 
+    @Override
+    public void finishWorkout() {
 
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
     }
 }

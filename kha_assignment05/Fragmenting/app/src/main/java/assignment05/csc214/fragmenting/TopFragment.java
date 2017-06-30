@@ -62,6 +62,7 @@ public class TopFragment extends FragmentLifecycleLogger {
             @Override
             public void onClick(View v) {
                 mListener.messageSentDown(mTopInput.getText().toString());
+
             }
         });
 
